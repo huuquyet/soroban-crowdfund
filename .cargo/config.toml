@@ -1,7 +1,7 @@
 # paths = ["/path/to/override"] # path dependency overrides
 
 [alias] # command aliases
-install_soroban = "install --locked --version 20.0.0-rc.4.1 soroban-cli"
+install_soroban = "install --locked --version 20.0.0-rc.4.1 --root ./target soroban-cli --debug"
 b = "build --target wasm32-unknown-unknown --release"
 # c = "check"
 # t = "test"

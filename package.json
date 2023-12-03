@@ -7,20 +7,20 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "setup": "./initialize.sh ${NETWORK:-testnet} && yarn install && yarn build:contracts && yarn bindings",
+    "setup": "./initialize.sh ${NETWORK:-futurenet} && yarn install && yarn build:contracts && yarn bindings",
     "clean": "git clean -xdf",
     "reset": "yarn clean && yarn setup",
-    "build:contracts": "./target/bin/soroban contract build",
-    "bindings:crowdfund": "./target/bin/soroban contract bindings typescript --wasm ./target/wasm32-unknown-unknown/release/soroban_crowdfund_contract.wasm --id $(cat ./.soroban-example-dapp/crowdfund_id) --output-dir ./.soroban-example-dapp/crowdfund-contract --network $(cat ./.soroban-example-dapp/network) --overwrite",
-    "bindings:abundance": "./target/bin/soroban contract bindings typescript --wasm ./target/wasm32-unknown-unknown/release/abundance_token.wasm --id $(cat ./.soroban-example-dapp/abundance_token_id) --output-dir ./.soroban-example-dapp/abundance-token --network $(cat ./.soroban-example-dapp/network) --overwrite",
+    "build:contracts": "soroban contract build",
+    "bindings:crowdfund": "soroban contract bindings typescript --wasm ./target/wasm32-unknown-unknown/release/soroban_crowdfund_contract.wasm --id $(cat ./.soroban-example-dapp/crowdfund_id) --output-dir ./.soroban-example-dapp/crowdfund-contract --network $(cat ./.soroban-example-dapp/network) --overwrite",
+    "bindings:abundance": "soroban contract bindings typescript --wasm ./target/wasm32-unknown-unknown/release/abundance_token.wasm --id $(cat ./.soroban-example-dapp/abundance_token_id) --output-dir ./.soroban-example-dapp/abundance-token --network $(cat ./.soroban-example-dapp/network) --overwrite",
     "bindings": "yarn bindings:crowdfund && yarn bindings:abundance"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.0.5",
-    "abundance-token": "file:.soroban-example-dapp/abundance-token",
+    "abundance-token": "./.soroban-example-dapp/abundance-token",
     "axios": "^0.27.2",
     "bigint-conversion": "^2.4.3",
-    "crowdfund-contract": "file:.soroban-example-dapp/crowdfund-contract",
+    "crowdfund-contract": "./.soroban-example-dapp/crowdfund-contract",
     "humanize-duration": "^3.31.0",
     "moment": "^2.29.4",
     "next": "^13.5.6",
@@ -28,7 +28,7 @@
     "react-dom": "^18.2.0",
     "soroban-client": "1.0.0-beta.2",
     "stellar-wallets-kit": "github:Creit-Tech/Stellar-Wallets-Kit",
-    "vercel": "^32.6.1"
+    "vercel": "latest"
   },
   "devDependencies": {
     "@types/humanize-duration": "^3.27.3",
@@ -37,11 +37,9 @@
     "@types/react-dom": "18.2.17",
     "eslint": "^8.55.0",
     "eslint-config-next": "^13.5.6",
-    "typescript": "5.3.2"
-  },
-  "engines": {
-    "node": ">=18.14.2",
-    "npm": ">=9.5.0"
+    "pino-pretty": "^10.2.3",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.2"
   },
   "packageManager": "yarn@4.0.2"
 }
