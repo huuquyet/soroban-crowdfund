@@ -1762,12 +1762,12 @@ __metadata:
 
 "abundance-token@file:.soroban-example-dapp/abundance-token::locator=soroban-example-dapp%40workspace%3A.":
   version: 0.0.0
-  resolution: "abundance-token@file:.soroban-example-dapp/abundance-token#.soroban-example-dapp/abundance-token::hash=76d9df&locator=soroban-example-dapp%40workspace%3A."
+  resolution: "abundance-token@file:.soroban-example-dapp/abundance-token#.soroban-example-dapp/abundance-token::hash=65e066&locator=soroban-example-dapp%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.5.1"
     buffer: "npm:6.0.3"
     soroban-client: "npm:1.0.0-beta.2"
-  checksum: a22c9a65095760f80f557cf8c8d86d565a2ea5804993714a177d881e3d9ae74f515090e1b30eda9ecd8172a2e2d2dc8a3b01c43620d3c725c3e033d96e72ea9a
+  checksum: 884c52cde8495182c5a6b7109ae1055282a1c01ac2cbb1f0a7cdc13a2e45b73113bcfbd812e3943e521879947f62675ca52805402cb878b466b0be818f6390e6
   languageName: node
   linkType: hard
 
@@ -2141,17 +2141,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.27.2":
-  version: 0.27.2
-  resolution: "axios@npm:0.27.2"
-  dependencies:
-    follow-redirects: "npm:^1.14.9"
-    form-data: "npm:^4.0.0"
-  checksum: 76d673d2a90629944b44d6f345f01e58e9174690f635115d5ffd4aca495d99bcd8f95c590d5ccb473513f5ebc1d1a6e8934580d0c57cdd0498c3a101313ef771
-  languageName: node
-  linkType: hard
-
-"axios@npm:^1.4.0":
+"axios@npm:^1.4.0, axios@npm:^1.6.0":
   version: 1.6.2
   resolution: "axios@npm:1.6.2"
   dependencies:
@@ -2620,12 +2610,12 @@ __metadata:
 
 "crowdfund-contract@file:.soroban-example-dapp/crowdfund-contract::locator=soroban-example-dapp%40workspace%3A.":
   version: 0.0.0
-  resolution: "crowdfund-contract@file:.soroban-example-dapp/crowdfund-contract#.soroban-example-dapp/crowdfund-contract::hash=43aa17&locator=soroban-example-dapp%40workspace%3A."
+  resolution: "crowdfund-contract@file:.soroban-example-dapp/crowdfund-contract#.soroban-example-dapp/crowdfund-contract::hash=9951ce&locator=soroban-example-dapp%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.5.1"
     buffer: "npm:6.0.3"
     soroban-client: "npm:1.0.0-beta.2"
-  checksum: 966be85ba8c46fb0b1385806ba620b937e04ece2ce8011c9c4184a1633aa3f9d2eb65d779e17fbb1e195143e50a78a3f0d72f98757934865b46cb6c39cf0e6c4
+  checksum: 094cb5edd1bd370c64cb8043ca7d041813aff57399e283c96a4f5c60ac1b5186726923aabc0d3c6f4f44d7bcce9958f2fbd23fbd866c1585d89171a47b04e238
   languageName: node
   linkType: hard
 
@@ -3736,7 +3726,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.9, follow-redirects@npm:^1.15.0":
+"follow-redirects@npm:^1.15.0":
   version: 1.15.3
   resolution: "follow-redirects@npm:1.15.3"
   peerDependenciesMeta:
@@ -6703,7 +6693,7 @@ __metadata:
     "@types/react": "npm:18.2.41"
     "@types/react-dom": "npm:18.2.17"
     abundance-token: "file:.soroban-example-dapp/abundance-token"
-    axios: "npm:^0.27.2"
+    axios: "npm:^1.6.0"
     bigint-conversion: "npm:^2.4.3"
     crowdfund-contract: "file:.soroban-example-dapp/crowdfund-contract"
     eslint: "npm:^8.55.0"

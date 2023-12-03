@@ -18,7 +18,7 @@
   "dependencies": {
     "@radix-ui/react-dialog": "1.0.5",
     "abundance-token": "file:.soroban-example-dapp/abundance-token",
-    "axios": "^0.27.2",
+    "axios": "^1.6.0",
     "bigint-conversion": "^2.4.3",
     "crowdfund-contract": "file:.soroban-example-dapp/crowdfund-contract",
     "humanize-duration": "^3.31.0",
