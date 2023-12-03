@@ -22,9 +22,6 @@ build-optimized: fmt
 			ls -l "$$i"; \
 		done
 
-build-docker:
-	docker build . --tag soroban-preview:11
-
 check: fmt
 	cargo clippy --all-targets
 	cargo clippy --release --target $(CARGO_BUILD_TARGET)
