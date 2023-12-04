@@ -13,18 +13,21 @@ if [[ -f "./.soroban-example-dapp/crowdfund_id" ]]; then
   exit 0
 fi
 
-if [[ -f "./target/bin/soroban" ]]; then
-  echo "Using soroban binary from ./target/bin"
-else
-  echo "Building pinned soroban binary"
-  cargo install_soroban
-fi
+# if [[ -f "./target/bin/soroban" ]]; then
+#   echo "Using soroban binary from ./target/bin"
+# else
+#   echo "Building pinned soroban binary"
+#   cargo install_soroban
+# fi
 
 if [[ "$SOROBAN_RPC_HOST" == "" ]]; then
   # If soroban-cli is called inside the soroban-preview docker container,
   # it can call the stellar standalone container just using its name "stellar"
   if [[ "$IS_USING_DOCKER" == "true" ]]; then
     SOROBAN_RPC_HOST="http://stellar:8000"
+    SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"
+  elif [[ "$NETWORK" == "testnet" ]]; then
+    SOROBAN_RPC_HOST="https://soroban-testnet.stellar.org:443"
     SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"
   elif [[ "$NETWORK" == "futurenet" ]]; then
     SOROBAN_RPC_HOST="https://rpc-futurenet.stellar.org:443"
@@ -42,6 +45,10 @@ case "$1" in
 standalone)
   SOROBAN_NETWORK_PASSPHRASE="Standalone Network ; February 2017"
   FRIENDBOT_URL="$SOROBAN_RPC_HOST/friendbot"
+  ;;
+testnet)
+  SOROBAN_NETWORK_PASSPHRASE="Test SDF Network ; September 2015"
+  FRIENDBOT_URL="https://friendbot.stellar.org/"
   ;;
 futurenet)
   SOROBAN_NETWORK_PASSPHRASE="Test SDF Future Network ; October 2022"
@@ -82,7 +89,7 @@ curl --silent -X POST "$FRIENDBOT_URL?addr=$ABUNDANCE_ADMIN_ADDRESS" >/dev/null
 ARGS="--network $NETWORK --source token-admin"
 
 echo Build contracts
-make build
+soroban contract build
 
 echo Deploy the abundance token contract
 ABUNDANCE_ID="$(
