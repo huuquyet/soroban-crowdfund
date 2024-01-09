@@ -25,7 +25,7 @@ const paging: Record<PagingKey, { lastLedgerStart?: number, pagingToken?: string
 export function useSubscription(
   contractId: string,
   topic: string,
-  onEvent: (event: SorobanRpc.Api.GetEventsResponse) => void,
+  onEvent: (event: SorobanRpc.Api.GetEventsResponse['events'][number]) => void,
   pollInterval = 5000
 ) {
   const id = `${contractId}:${topic}`
@@ -61,7 +61,7 @@ export function useSubscription(
      
         paging[id].pagingToken = undefined;
         if (response.latestLedger) {
-          paging[id].lastLedgerStart = parseInt(response.latestLedger);
+          paging[id].lastLedgerStart = response.latestLedger;
         }
         response.events && response.events.forEach(event => {
           try {
