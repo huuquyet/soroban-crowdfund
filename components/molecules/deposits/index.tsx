@@ -15,7 +15,7 @@ export function Deposits(props: IDepositsProps) {
   const [balance, setBalance] = React.useState<BigInt>(BigInt(0))
 
   React.useEffect(() => {
-    crowdfund.balance({ user: props.address }).then(tx => setBalance(tx.result))
+    crowdfund.balance({ user: props.address }).then((tx: any) => setBalance(tx.result))
   }, [props.address])
 
 

@@ -82,7 +82,7 @@ const FormPledge: FunctionComponent<IFormPledgeProps> = props => {
         user: props.account,
         amount: BigInt(amount * 10 ** decimals),
       })
-      tx.signAndSend()
+      await tx.signAndSend()
 
       setResultSubmit({
         status: 'success',
