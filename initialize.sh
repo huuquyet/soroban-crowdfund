@@ -27,7 +27,7 @@ if [[ "$SOROBAN_RPC_HOST" == "" ]]; then
     SOROBAN_RPC_HOST="http://stellar:8000"
     SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"
   elif [[ "$NETWORK" == "futurenet" ]]; then
-    SOROBAN_RPC_HOST="https://rpc-futurenet.stellar.org:443"
+    SOROBAN_RPC_HOST="https://rpc-futurenet.stellar.org"
     SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"
   else
      # assumes standalone on quickstart, which has the soroban/rpc path

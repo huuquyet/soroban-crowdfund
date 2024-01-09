@@ -2,7 +2,7 @@
 
 use super::testutils::{register_test_contract as register_crowdfund, Crowdfund};
 use soroban_sdk::{
-    testutils::{Address as AddressTestTrait, Events, Ledger},
+    testutils::{Address as _, Events, Ledger},
     token, vec, Address, Env, IntoVal, Symbol, Val, Vec,
 };
 
@@ -56,16 +56,16 @@ fn create_token_contract<'a>(
 impl Setup<'_> {
     fn new() -> Self {
         let e: Env = soroban_sdk::Env::default();
-        let recipient = Address::random(&e);
-        let user1 = Address::random(&e);
-        let user2 = Address::random(&e);
+        let recipient = Address::generate(&e);
+        let user1 = Address::generate(&e);
+        let user2 = Address::generate(&e);
 
         // the deadline is 10 seconds from now
         let deadline = e.ledger().timestamp() + 10;
         let target_amount: i128 = 15;
 
         // Create the token contract
-        let token_admin = Address::random(&e);
+        let token_admin = Address::generate(&e);
         let (token, token_admin) = create_token_contract(&e, &token_admin);
 
         // Create the crowdfunding contract

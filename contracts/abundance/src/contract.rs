@@ -103,12 +103,12 @@ impl token::Interface for Token {
         read_balance(&e, id)
     }
 
-    fn spendable_balance(e: Env, id: Address) -> i128 {
-        e.storage()
-            .instance()
-            .extend_ttl(INSTANCE_LIFETIME_THRESHOLD, INSTANCE_BUMP_AMOUNT);
-        read_balance(&e, id)
-    }
+    // fn spendable_balance(e: Env, id: Address) -> i128 {
+    //     e.storage()
+    //         .instance()
+    //         .extend_ttl(INSTANCE_LIFETIME_THRESHOLD, INSTANCE_BUMP_AMOUNT);
+    //     read_balance(&e, id)
+    // }
 
     fn transfer(e: Env, from: Address, to: Address, amount: i128) {
         from.require_auth();
