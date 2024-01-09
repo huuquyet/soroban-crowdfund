@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { server } from '../shared/contracts'
-import * as SorobanClient from 'soroban-client'
-let xdr = SorobanClient.xdr
+import { xdr, SorobanRpc } from '@stellar/stellar-sdk'
 
 /**
  * Concatenated `${contractId}:${topic}`
@@ -26,7 +25,7 @@ const paging: Record<PagingKey, { lastLedgerStart?: number, pagingToken?: string
 export function useSubscription(
   contractId: string,
   topic: string,
-  onEvent: (event: SorobanClient.SorobanRpc.EventResponse) => void,
+  onEvent: (event: SorobanRpc.Api.GetEventsResponse) => void,
   pollInterval = 5000
 ) {
   const id = `${contractId}:${topic}`

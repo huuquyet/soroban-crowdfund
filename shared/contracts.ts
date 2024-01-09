@@ -1,6 +1,6 @@
 import * as Abundance from 'abundance-token'
 import * as Crowdfund from 'crowdfund-contract'
-import { Server } from 'soroban-client'
+import { Server } from '@stellar/stellar-sdk'
 import config from './config.json'
 const { network, rpcUrl } = config
 
