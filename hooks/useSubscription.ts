@@ -32,7 +32,7 @@ export function useSubscription(
   paging[id] = paging[id] || {}
 
   React.useEffect(() => {
-    let timeoutId: NodeJS.Timer | null = null
+    let timeoutId: NodeJS.Timeout | null = null
     let stop = false
 
     async function pollEvents(): Promise<void> {
