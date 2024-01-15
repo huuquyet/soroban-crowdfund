@@ -82,7 +82,7 @@ ARGS="--network $NETWORK --source token-admin"
 
 WASM_PATH="./target/wasm32-unknown-unknown/release/"
 TOKEN_PATH=$WASM_PATH"soroban_token_contract"
-CROWDFUND_PATH=$WASM_PATH"soroban_crowfund_contract"
+CROWDFUND_PATH=$WASM_PATH"soroban_crowdfund_contract"
 
 echo "Build contracts"
 soroban contract build

@@ -25,7 +25,7 @@ tasks:
       clear
   - name: CLI - Sandbox
     init: |
-      make all
+      # make all
     command: |
       npm run setup
       npm run dev
