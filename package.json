@@ -7,21 +7,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "setup": "./initialize.sh ${NETWORK:-futurenet} && npm install && npm run build:contracts && npm run bindings",
+    "setup": "./initialize.sh ${NETWORK:-futurenet} && npm install",
     "clean": "git clean -xdf",
-    "reset": "npm run clean && npm run setup",
-    "build:contracts": "./target/bin/soroban contract build",
-    "bindings:crowdfund": "./target/bin/soroban contract bindings typescript --wasm ./target/wasm32-unknown-unknown/release/soroban_crowdfund_contract.wasm --id $(cat ./.soroban-example-dapp/crowdfund_id) --output-dir ./.soroban-example-dapp/crowdfund-contract --network $(cat ./.soroban-example-dapp/network) --overwrite",
-    "bindings:abundance": "./target/bin/soroban contract bindings typescript --wasm ./target/wasm32-unknown-unknown/release/abundance_token.wasm --id $(cat ./.soroban-example-dapp/abundance_token_id) --output-dir ./.soroban-example-dapp/abundance-token --network $(cat ./.soroban-example-dapp/network) --overwrite",
-    "bindings": "npm run bindings:crowdfund && npm run bindings:abundance"
+    "reset": "npm run clean && npm run setup"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
     "@stellar/stellar-sdk": "^11.2.0",
-    "abundance-token": "file:.soroban-example-dapp/abundance-token",
+    "abundance-token": "file:.soroban/contracts/token",
     "axios": "^1.6.5",
     "bigint-conversion": "^2.4.3",
-    "crowdfund-contract": "file:.soroban-example-dapp/crowdfund-contract",
+    "crowdfund-contract": "file:.soroban/contracts/crowdfund",
     "humanize-duration": "^3.31.0",
     "moment": "^2.30.1",
     "next": "^14.0.4",
@@ -43,6 +39,5 @@
   "engines": {
     "node": ">=18.14.2",
     "npm": ">=9.5.0"
-  },
-  "packageManager": "yarn@4.0.2"
+  }
 }

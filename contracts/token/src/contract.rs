@@ -22,6 +22,7 @@ fn check_nonnegative_amount(amount: i128) {
 pub struct Token;
 
 #[contractimpl]
+#[allow(unused)]
 impl Token {
     pub fn initialize(e: Env, admin: Address, decimal: u32, name: String, symbol: String) {
         if has_administrator(&e) {
@@ -42,15 +43,10 @@ impl Token {
         )
     }
 
-    /// Mint yourself some tokens!
-    ///
-    /// # Arguments
-    ///
-    /// * `to` - The account to mint tokens to; the transaction must also be signed by this
-    /// account
-    /// * `amount` - The amount of tokens to mint (remember to multiply by `decimals`!)
     pub fn mint(e: Env, to: Address, amount: i128) {
         check_nonnegative_amount(amount);
+        // let admin = read_administrator(&e);
+        // admin.require_auth();
         to.require_auth();
 
         e.storage()
@@ -58,6 +54,7 @@ impl Token {
             .extend_ttl(INSTANCE_LIFETIME_THRESHOLD, INSTANCE_BUMP_AMOUNT);
 
         receive_balance(&e, to.clone(), amount);
+        // TokenUtils::new(&e).events().mint(admin, to, amount);
         TokenUtils::new(&e).events().mint(to.clone(), to, amount);
     }
 
@@ -76,8 +73,7 @@ impl Token {
     #[cfg(test)]
     pub fn get_allowance(e: Env, from: Address, spender: Address) -> Option<AllowanceValue> {
         let key = DataKey::Allowance(AllowanceDataKey { from, spender });
-        let allowance = e.storage().temporary().get::<_, AllowanceValue>(&key);
-        allowance
+        e.storage().temporary().get::<_, AllowanceValue>(&key)
     }
 }
 
@@ -111,13 +107,6 @@ impl token::Interface for Token {
             .extend_ttl(INSTANCE_LIFETIME_THRESHOLD, INSTANCE_BUMP_AMOUNT);
         read_balance(&e, id)
     }
-
-    // fn spendable_balance(e: Env, id: Address) -> i128 {
-    //     e.storage()
-    //         .instance()
-    //         .extend_ttl(INSTANCE_LIFETIME_THRESHOLD, INSTANCE_BUMP_AMOUNT);
-    //     read_balance(&e, id)
-    // }
 
     fn transfer(e: Env, from: Address, to: Address, amount: i128) {
         from.require_auth();

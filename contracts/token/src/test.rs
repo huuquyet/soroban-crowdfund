@@ -30,6 +30,7 @@ fn test() {
     assert_eq!(
         e.auths(),
         std::vec![(
+            // admin1.clone(),
             user1.clone(),
             AuthorizedInvocation {
                 function: AuthorizedFunction::Contract((

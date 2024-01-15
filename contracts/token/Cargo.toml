@@ -1,8 +1,10 @@
 [package]
-name = "abundance-token"
-description = "Soroban standard token contract, but anyone can mint to themselves."
-version = "0.0.6"
+name = "soroban-token-contract"
+description = "Soroban standard token contract"
+version = "0.1.0"
 edition = "2021"
+publish = false
+autobins = false
 
 [lib]
 crate-type = ["cdylib"]
