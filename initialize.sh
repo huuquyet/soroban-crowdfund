@@ -8,13 +8,15 @@ SOROBAN_RPC_HOST="$2"
 
 PATH=./target/bin:$PATH
 
-if [[ -f "./.soroban-example-dapp/crowdfund_id" ]]; then
-  echo "Found existing './.soroban-example-dapp' directory; already initialized."
+if [[ -f "./.soroban/contracts/crowdfund_id" ]]; then
+  echo "Found existing '.soroban/contracts' directory; already initialized."
   exit 0
 fi
 
 if [[ -f "./target/bin/soroban" ]]; then
   echo "Using soroban binary from ./target/bin"
+elif command -v soroban &> /dev/null; then
+  echo "Using soroban cli"
 else
   echo "Building pinned soroban binary"
   cargo install_soroban
@@ -62,22 +64,19 @@ soroban config network add \
   --rpc-url "$SOROBAN_RPC_URL" \
   --network-passphrase "$SOROBAN_NETWORK_PASSPHRASE" "$NETWORK"
 
-echo Add $NETWORK to .soroban-example-dapp for use with npm scripts
-mkdir -p .soroban-example-dapp
-echo $NETWORK > ./.soroban-example-dapp/network
-echo $SOROBAN_RPC_URL > ./.soroban-example-dapp/rpc-url
-echo "$SOROBAN_NETWORK_PASSPHRASE" > ./.soroban-example-dapp/passphrase
+echo Add $NETWORK to .soroban to shared config
 echo "{ \"network\": \"$NETWORK\", \"rpcUrl\": \"$SOROBAN_RPC_URL\", \"networkPassphrase\": \"$SOROBAN_NETWORK_PASSPHRASE\" }" > ./shared/config.json
 
 if !(soroban config identity ls | grep token-admin 2>&1 >/dev/null); then
   echo Create the token-admin identity
-  soroban config identity generate token-admin
+  soroban config identity generate token-admin --network $NETWORK
 fi
 ABUNDANCE_ADMIN_ADDRESS="$(soroban config identity address token-admin)"
 
 # This will fail if the account already exists, but it'll still be fine.
 echo Fund token-admin account from friendbot
-curl --silent -X POST "$FRIENDBOT_URL?addr=$ABUNDANCE_ADMIN_ADDRESS" >/dev/null
+  soroban config identity fund token-admin --network $NETWORK
+# curl --silent -X POST "$FRIENDBOT_URL?addr=$ABUNDANCE_ADMIN_ADDRESS" >/dev/null
 
 ARGS="--network $NETWORK --source token-admin"
 
