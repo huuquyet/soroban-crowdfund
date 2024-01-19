@@ -11,7 +11,7 @@ export interface CheckboxProps {
 
 export function Checkbox({ title, value, isChecked, setAmount, clearInput }: CheckboxProps) {
   const handleCheckBox = (event: {
-    target: { checked: any; value: string }
+    target: { checked: boolean; value: string }
   }) => {
     clearInput()
     setAmount(parseInt(event.target.value))

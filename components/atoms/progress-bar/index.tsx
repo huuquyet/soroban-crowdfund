@@ -8,7 +8,7 @@ export interface ProgressBarProps {
 export function ProgressBar({ value }: ProgressBarProps) {
   return (
     <div className={styles.progressBarBackground}>
-      <div className={styles.progressBar} style={{ width: value + '%' }} />
+      <div className={styles.progressBar} style={{ width: `${value}%` }} />
     </div>
   )
 }

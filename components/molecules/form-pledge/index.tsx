@@ -75,7 +75,7 @@ const FormPledge: FunctionComponent<IFormPledgeProps> = (props) => {
       setDecimals(decimals.result)
       setSymbol(symbol.result.toString())
     })()
-  }, [props.account, props.updatedAt])
+  }, [props.account, setBalance, setDecimals, setSymbol])
 
   const clearInput = (): void => {
     setInput('')
@@ -122,28 +122,28 @@ const FormPledge: FunctionComponent<IFormPledgeProps> = (props) => {
         <Checkbox
           title={`100 ${props.symbol}`}
           value={100}
-          isChecked={amount == 100}
+          isChecked={amount === 100}
           setAmount={setAmount}
           clearInput={clearInput}
         />
         <Checkbox
           title={`250 ${props.symbol}`}
           value={250}
-          isChecked={amount == 250}
+          isChecked={amount === 250}
           setAmount={setAmount}
           clearInput={clearInput}
         />
         <Checkbox
           title={`500 ${props.symbol}`}
           value={500}
-          isChecked={amount == 500}
+          isChecked={amount === 500}
           setAmount={setAmount}
           clearInput={clearInput}
         />
         <Checkbox
           title={`1000 ${props.symbol}`}
           value={1000}
-          isChecked={amount == 1000}
+          isChecked={amount === 1000}
           setAmount={setAmount}
           clearInput={clearInput}
         />

@@ -5,5 +5,5 @@ export interface SpacerProps {
 }
 
 export function Spacer({ rem }: SpacerProps) {
-  return <div style={{ height: rem + 'rem' }} />
+  return <div style={{ height: `${rem}rem` }} />
 }

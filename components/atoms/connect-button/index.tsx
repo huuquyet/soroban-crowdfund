@@ -14,7 +14,12 @@ export function ConnectButton({ label, isHigher, isLoading, onClick }: ConnectBu
     return <Loading size={isHigher ? 50 : 38} />
   }
   return (
-    <button className={styles.button} style={{ height: isHigher ? 50 : 38 }} onClick={onClick}>
+    <button
+      className={styles.button}
+      style={{ height: isHigher ? 50 : 38 }}
+      onClick={onClick}
+      type="button"
+    >
       {label}
     </button>
   )

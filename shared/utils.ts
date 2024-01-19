@@ -27,13 +27,11 @@ const getRemainingTime = (date?: Date): string => {
     return 'Expired'
   }
 
-  return (
-    humanizeDuration(diff, {
-      round: true,
-      conjunction: ' and ',
-      largest: 1,
-    }) + ' left'
-  )
+  return `${humanizeDuration(diff, {
+    round: true,
+    conjunction: ' and ',
+    largest: 1,
+  })} left`
 }
 
 const isExpired = (date?: Date): boolean => {

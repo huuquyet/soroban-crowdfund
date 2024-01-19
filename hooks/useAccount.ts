@@ -94,7 +94,7 @@ export function useAccount(): Props {
       })()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [walletAddress])
+  }, [walletAddress, getWalletAddress])
 
   const onConnect = async () => {
     if (!walletAddress) {

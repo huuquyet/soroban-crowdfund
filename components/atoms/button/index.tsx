@@ -11,7 +11,7 @@ export interface ButtonProps {
 
 export function Button({ title, onClick, disabled, isLoading }: ButtonProps) {
   return (
-    <button className={styles.button} onClick={onClick} disabled={disabled}>
+    <button className={styles.button} onClick={onClick} disabled={disabled} type="button">
       {isLoading ? <Loading size={18} /> : title}
     </button>
   )

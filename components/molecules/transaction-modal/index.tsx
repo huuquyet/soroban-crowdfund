@@ -17,11 +17,11 @@ export interface TransactionModalProps {
 }
 
 export function TransactionModal({ result, closeModal }: TransactionModalProps) {
-  const isSuccess = result.status == 'success'
+  const isSuccess = result.status === 'success'
 
   return (
     <div>
-      <div className={styles.darkBG} onClick={closeModal} />
+      <div className={styles.darkBG} onClick={closeModal} onKeyDown={() => {}} />
       <div className={styles.centered}>
         <div className={styles.modal}>
           <Image
@@ -47,7 +47,7 @@ export function TransactionModal({ result, closeModal }: TransactionModalProps) 
               <Image src={LinkSvg} width={24} height={24} alt="Copy link" />
             </div>
           )}
-          <button className={styles.button} onClick={closeModal}>
+          <button className={styles.button} onClick={closeModal} type="button">
             Done
           </button>
         </div>

@@ -49,7 +49,7 @@ const Pledge: FunctionComponent = () => {
         target: target.result,
       })
     })()
-  }, [updatedAt])
+  }, [setAbundance, setCrowdfund])
 
   const [targetReached, setTargetReached] = useState<boolean>(false)
 
@@ -64,7 +64,7 @@ const Pledge: FunctionComponent = () => {
           balance: scValToNative(eventTokenBalance),
         })
       },
-      [abundance]
+      [abundance, setAbundance]
     )
   )
 
