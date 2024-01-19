@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import { useAppContext } from '../context/appContext'
 import {
   ISupportedWallet,
   StellarWalletsKit,
   WalletNetwork,
   WalletType,
 } from 'stellar-wallets-kit/build/module'
+import { useAppContext } from '../context/appContext'
 
 // returning the same object identity every time avoids unnecessary re-renders
 const addressObject = {

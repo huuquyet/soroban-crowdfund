@@ -9,11 +9,12 @@ import moment from 'moment'
  * Otherwise, return it as a BigInt, which does not respect decimal places.
  * This is probably ok since the numbers will be so huge.
  */
-export function formatAmount(undivided: BigInt, decimals: number): string {
-  const n = undivided.valueOf() < BigInt(Number.MAX_SAFE_INTEGER)
-    ? Number(undivided) / (10 ** decimals)
-    : (undivided.valueOf() / (10n ** BigInt(decimals)));
-  return String(n);
+export function formatAmount(undivided: bigint, decimals: number): string {
+  const n =
+    undivided.valueOf() < BigInt(Number.MAX_SAFE_INTEGER)
+      ? Number(undivided) / 10 ** decimals
+      : undivided.valueOf() / 10n ** BigInt(decimals)
+  return String(n)
 }
 
 const getRemainingTime = (date?: Date): string => {
@@ -45,14 +46,12 @@ const isExpired = (date?: Date): boolean => {
  * and that dividing each one by `decimals` results in a value representable as
  * a `number` type.
  */
-const percentage = (
-  value: BigInt,
-  divider: BigInt,
-  decimals = 7
-): number => {
-  return (Number(value.valueOf() / (10n ** BigInt(decimals))) /
-      Number(divider.valueOf() / (10n ** BigInt(decimals)))
-    ) * 100
+const percentage = (value: bigint, divider: bigint, decimals = 7): number => {
+  return (
+    (Number(value.valueOf() / 10n ** BigInt(decimals)) /
+      Number(divider.valueOf() / 10n ** BigInt(decimals))) *
+    100
+  )
 }
 
 const Utils = {

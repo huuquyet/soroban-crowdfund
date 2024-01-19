@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useState } from 'react'
-import { AmountInput, Button, Checkbox } from '../../atoms'
-import { TransactionModal } from '../../molecules/transaction-modal'
-import { Utils } from '../../../shared/utils'
-import styles from './style.module.css'
-import { Spacer } from '../../atoms/spacer'
 import { abundance, crowdfund } from '../../../shared/contracts'
+import { Utils } from '../../../shared/utils'
+import { AmountInput, Button, Checkbox } from '../../atoms'
+import { Spacer } from '../../atoms/spacer'
+import { TransactionModal } from '../../molecules/transaction-modal'
+import styles from './style.module.css'
 
 export interface IFormPledgeProps {
   account: string
@@ -24,7 +24,17 @@ export interface IResultSubmit {
 /**
  * Mint 100.0000000 tokens to the user's wallet for testing
  */
-function MintButton({ account, symbol, onComplete, decimals }: { decimals: number, account: string; symbol: string, onComplete: () => void }) {
+function MintButton({
+  account,
+  symbol,
+  onComplete,
+  decimals,
+}: {
+  decimals: number
+  account: string
+  symbol: string
+  onComplete: () => void
+}) {
   const [isSubmitting, setSubmitting] = useState(false)
 
   const displayAmount = 100
@@ -46,8 +56,8 @@ function MintButton({ account, symbol, onComplete, decimals }: { decimals: numbe
   )
 }
 
-const FormPledge: FunctionComponent<IFormPledgeProps> = props => {
-  const [balance, setBalance] = React.useState<BigInt>(BigInt(0))
+const FormPledge: FunctionComponent<IFormPledgeProps> = (props) => {
+  const [balance, setBalance] = React.useState<bigint>(BigInt(0))
   const [decimals, setDecimals] = React.useState<number>(0)
   const [symbol, setSymbol] = React.useState<string>()
 
@@ -57,15 +67,14 @@ const FormPledge: FunctionComponent<IFormPledgeProps> = props => {
   const [isSubmitting, setSubmitting] = useState(false)
 
   React.useEffect(() => {
-    Promise.all([
-      abundance.balance({ id: props.account }),
-      abundance.decimals(),
-      abundance.symbol(),
-    ]).then(fetched => {
-      setBalance(fetched[0].result)
-      setDecimals(fetched[1].result)
-      setSymbol(fetched[2].result.toString())
-    })
+    ;(async () => {
+      const balance = await abundance.balance({ id: props.account })
+      const decimals = await abundance.decimals()
+      const symbol = await abundance.symbol()
+      setBalance(balance.result)
+      setDecimals(decimals.result)
+      setSymbol(symbol.result.toString())
+    })()
   }, [props.account, props.updatedAt])
 
   const clearInput = (): void => {
@@ -99,7 +108,7 @@ const FormPledge: FunctionComponent<IFormPledgeProps> = props => {
           error: e?.message || 'An error has occurred',
         })
       } else {
-        throw e;
+        throw e
       }
     } finally {
       setSubmitting(false)
@@ -165,16 +174,15 @@ const FormPledge: FunctionComponent<IFormPledgeProps> = props => {
           />
           <div className={styles.wrapper}>
             <div>
-              <h6>Your balance:  {Utils.formatAmount(balance, decimals)} {symbol}</h6>
+              <h6>
+                Your balance: {Utils.formatAmount(balance, decimals)} {symbol}
+              </h6>
             </div>
           </div>
         </div>
       ) : null}
       {resultSubmit && (
-        <TransactionModal
-          result={resultSubmit}
-          closeModal={() => setResultSubmit(undefined)}
-        />
+        <TransactionModal result={resultSubmit} closeModal={() => setResultSubmit(undefined)} />
       )}
     </div>
   )

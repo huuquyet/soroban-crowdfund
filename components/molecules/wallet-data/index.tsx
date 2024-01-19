@@ -16,11 +16,7 @@ export function WalletData() {
       {account ? (
         <ConnectButton label="Disconnect" onClick={onDisconnect} />
       ) : (
-        <ConnectButton
-          isLoading={isLoading}
-          label="Connect Wallet"
-          onClick={onConnect}
-        />
+        <ConnectButton isLoading={isLoading} label="Connect Wallet" onClick={onConnect} />
       )}
     </div>
   )

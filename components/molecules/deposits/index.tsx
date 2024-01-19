@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from './style.module.css'
+import { crowdfund } from '../../../shared/contracts'
 import { Utils } from '../../../shared/utils'
 import { Spacer } from '../../atoms/spacer'
-import { crowdfund } from '../../../shared/contracts'
+import styles from './style.module.css'
 
 export interface IDepositsProps {
   address: string
@@ -12,12 +12,11 @@ export interface IDepositsProps {
 }
 
 export function Deposits(props: IDepositsProps) {
-  const [balance, setBalance] = React.useState<BigInt>(BigInt(0))
+  const [balance, setBalance] = React.useState<bigint>(BigInt(0))
 
   React.useEffect(() => {
     crowdfund.balance({ user: props.address }).then((tx: any) => setBalance(tx.result))
   }, [props.address])
-
 
   if (Number(balance) <= 0) {
     return <React.Fragment />

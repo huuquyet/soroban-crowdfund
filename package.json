@@ -6,17 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "npx @biomejs/biome@1.4.1 check --apply .",
     "setup": "./initialize.sh ${NETWORK:-futurenet} && npm install",
     "clean": "git clean -xdf",
     "reset": "npm run clean && npm run setup"
   },
   "dependencies": {
-    "@radix-ui/react-dialog": "^1.0.5",
     "@stellar/stellar-sdk": "^11.2.0",
     "abundance-token": "file:.soroban/contracts/token",
     "axios": "^1.6.5",
-    "bigint-conversion": "^2.4.3",
     "crowdfund-contract": "file:.soroban/contracts/crowdfund",
     "humanize-duration": "^3.31.0",
     "moment": "^2.30.1",
@@ -24,20 +22,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.33.1",
-    "stellar-wallets-kit": "github:Creit-Tech/Stellar-Wallets-Kit",
-    "vercel": "^32.3.0"
+    "stellar-wallets-kit": "github:Creit-Tech/Stellar-Wallets-Kit"
   },
   "devDependencies": {
-    "@types/humanize-duration": "^3.27.4",
+    "@biomejs/biome": "^1.5.2",
     "@types/node": "^20.11.0",
-    "@types/react": "^18.2.47",
-    "@types/react-dom": "^18.2.18",
-    "eslint": "^8.56.0",
-    "eslint-config-next": "^14.0.4",
+    "@types/react": "^18.2.48",
     "typescript": "^5.3.3"
-  },
-  "engines": {
-    "node": ">=18.14.2",
-    "npm": ">=9.5.0"
   }
 }

@@ -1,6 +1,6 @@
+import Image, { StaticImageData } from 'next/image'
 import React, { ReactNode } from 'react'
 import styles from './style.module.css'
-import Image, { StaticImageData } from 'next/image'
 
 export interface AuthorInfoProps {
   image: StaticImageData

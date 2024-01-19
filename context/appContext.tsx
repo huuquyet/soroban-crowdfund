@@ -5,9 +5,7 @@ const AppContext = createContext({
   setWalletAddress: (value: any) => value,
 })
 
-export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [walletAddress, setWalletAddress] = useState('')
 
   return (

@@ -1,18 +1,17 @@
-import React, { useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import { Campaign, Pledge } from '../components/organisms'
+import React, { useState } from 'react'
 import { WalletData } from '../components/molecules'
+import { Campaign, Pledge } from '../components/organisms'
 import { AppProvider } from '../context/appContext'
+import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   return (
     <AppProvider>
       <Head>
         <title>
-          Crowdfund Template - An example of how to run a crowdfund campaign on
-          Soroban.
+          Crowdfund Template - An example of how to run a crowdfund campaign on Soroban.
         </title>
         <meta
           name="description"

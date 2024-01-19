@@ -1,18 +1,15 @@
 import React, { FunctionComponent, useState } from 'react'
-import { Card, ConnectButton, Loading, ProgressBar } from '../../atoms'
-import styles from './style.module.css'
-import { Spacer } from '../../atoms/spacer'
-import { Utils } from '../../../shared/utils'
+import { useAccount, useSubscription } from '../../../hooks'
 import {
-  useAccount,
-  useSubscription,
-} from '../../../hooks'
-import {
-  crowdfund as crowdfundContract,
   abundance as abundanceContract,
+  crowdfund as crowdfundContract,
 } from '../../../shared/contracts'
+import { Utils } from '../../../shared/utils'
+import { Card, ConnectButton, Loading, ProgressBar } from '../../atoms'
+import { Spacer } from '../../atoms/spacer'
+import styles from './style.module.css'
 
-import { xdr, scValToNative } from '@stellar/stellar-sdk'
+import { scValToNative, xdr } from '@stellar/stellar-sdk'
 import { Deposits, FormPledge } from '../../molecules'
 
 const Pledge: FunctionComponent = () => {
@@ -20,7 +17,7 @@ const Pledge: FunctionComponent = () => {
   const { account, isLoading, onConnect } = useAccount()
 
   const [abundance, setAbundance] = React.useState<{
-    balance: BigInt
+    balance: bigint
     decimals: number
     name: string
     symbol: string
@@ -28,29 +25,30 @@ const Pledge: FunctionComponent = () => {
 
   const [crowdfund, setCrowdfund] = React.useState<{
     deadline: Date
-    target: BigInt
+    target: bigint
   }>()
 
   React.useEffect(() => {
-    Promise.all([
-      abundanceContract.balance({ id: crowdfundContract.options.contractId }),
-      abundanceContract.decimals(),
-      abundanceContract.name(),
-      abundanceContract.symbol(),
-      crowdfundContract.deadline(),
-      crowdfundContract.target(),
-    ]).then(fetched => {
+    ;(async () => {
+      const balance = await abundanceContract.balance({
+        id: crowdfundContract.options.contractId,
+      })
+      const decimals = await abundanceContract.decimals()
+      const name = await abundanceContract.name()
+      const symbol = await abundanceContract.symbol()
+      const deadline = await crowdfundContract.deadline()
+      const target = await crowdfundContract.target()
       setAbundance({
-        balance: fetched[0].result,
-        decimals: fetched[1].result,
-        name: fetched[2].result.toString(),
-        symbol: fetched[3].result.toString(),
+        balance: balance.result,
+        decimals: decimals.result,
+        name: name.result.toString(),
+        symbol: symbol.result.toString(),
       })
       setCrowdfund({
-        deadline: new Date(Number(fetched[4].result) * 1000),
-        target: fetched[5].result,
+        deadline: new Date(Number(deadline.result) * 1000),
+        target: target.result,
       })
-    })
+    })()
   }, [updatedAt])
 
   const [targetReached, setTargetReached] = useState<boolean>(false)
@@ -58,18 +56,27 @@ const Pledge: FunctionComponent = () => {
   useSubscription(
     crowdfundContract.options.contractId,
     'pledged_amount_changed',
-    React.useMemo(() => event => {
-      let eventTokenBalance = event.value
-      setAbundance({ ...abundance!, balance: scValToNative(eventTokenBalance) })
-    }, [abundance])
+    React.useMemo(
+      () => (event) => {
+        const eventTokenBalance = event.value
+        setAbundance({
+          ...abundance!,
+          balance: scValToNative(eventTokenBalance),
+        })
+      },
+      [abundance]
+    )
   )
 
   useSubscription(
     crowdfundContract.options.contractId,
     'target_reached',
-    React.useMemo(() => () => {
-      setTargetReached(true)
-    }, [])
+    React.useMemo(
+      () => () => {
+        setTargetReached(true)
+      },
+      []
+    )
   )
 
   return (
@@ -81,26 +88,19 @@ const Pledge: FunctionComponent = () => {
           {targetReached && <h6>SUCCESSFUL CAMPAIGN !!</h6>}
           <h6>PLEDGED</h6>
           <div className={styles.pledgeAmount}>
-            {Utils.formatAmount(abundance.balance, abundance.decimals)}{' '}
-            {abundance.symbol}
+            {Utils.formatAmount(abundance.balance, abundance.decimals)} {abundance.symbol}
           </div>
           <span className={styles.pledgeGoal}>{`of ${Utils.formatAmount(
             crowdfund.target,
             abundance.decimals
           )} ${abundance.symbol} goal`}</span>
           <ProgressBar
-            value={Utils.percentage(
-              abundance.balance,
-              crowdfund.target,
-              abundance.decimals
-            )}
+            value={Utils.percentage(abundance.balance, crowdfund.target, abundance.decimals)}
           />
           <div className={styles.wrapper}>
             <div>
               <h6>Time remaining</h6>
-              <span className={styles.values}>
-                {Utils.getRemainingTime(crowdfund.deadline)}
-              </span>
+              <span className={styles.values}>{Utils.getRemainingTime(crowdfund.deadline)}</span>
             </div>
             <div>
               <h6>Backers</h6>

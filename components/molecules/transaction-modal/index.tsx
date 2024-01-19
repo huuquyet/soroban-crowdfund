@@ -1,25 +1,22 @@
-import React from 'react'
-import styles from './style.module.css'
 import Image from 'next/image'
+import React from 'react'
 import {
   CongratulationsSvg,
   ErrorSvg,
   FacebookSvg,
-  LinkedinSvg,
   LinkSvg,
+  LinkedinSvg,
   TwitterSvg,
 } from '../../../assets/icons'
 import { IResultSubmit } from '../form-pledge'
+import styles from './style.module.css'
 
 export interface TransactionModalProps {
   result: IResultSubmit
   closeModal: () => void
 }
 
-export function TransactionModal({
-  result,
-  closeModal,
-}: TransactionModalProps) {
+export function TransactionModal({ result, closeModal }: TransactionModalProps) {
   const isSuccess = result.status == 'success'
 
   return (
@@ -44,24 +41,9 @@ export function TransactionModal({
           </span>
           {isSuccess && (
             <div className={styles.socialButtons}>
-              <Image
-                src={FacebookSvg}
-                width={24}
-                height={24}
-                alt="Share on Facebook"
-              />
-              <Image
-                src={TwitterSvg}
-                width={24}
-                height={24}
-                alt="Share on Twitter"
-              />
-              <Image
-                src={LinkedinSvg}
-                width={24}
-                height={24}
-                alt="Share on LinkedIn"
-              />
+              <Image src={FacebookSvg} width={24} height={24} alt="Share on Facebook" />
+              <Image src={TwitterSvg} width={24} height={24} alt="Share on Twitter" />
+              <Image src={LinkedinSvg} width={24} height={24} alt="Share on LinkedIn" />
               <Image src={LinkSvg} width={24} height={24} alt="Copy link" />
             </div>
           )}

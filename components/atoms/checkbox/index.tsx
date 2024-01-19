@@ -9,13 +9,7 @@ export interface CheckboxProps {
   clearInput: () => void
 }
 
-export function Checkbox({
-  title,
-  value,
-  isChecked,
-  setAmount,
-  clearInput,
-}: CheckboxProps) {
+export function Checkbox({ title, value, isChecked, setAmount, clearInput }: CheckboxProps) {
   const handleCheckBox = (event: {
     target: { checked: any; value: string }
   }) => {
@@ -25,12 +19,7 @@ export function Checkbox({
 
   return (
     <label className={styles.label}>
-      <input
-        type="checkbox"
-        value={value}
-        checked={isChecked}
-        onChange={handleCheckBox}
-      />
+      <input type="checkbox" value={value} checked={isChecked} onChange={handleCheckBox} />
       <span>{title}</span>
     </label>
   )
