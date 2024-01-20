@@ -1,8 +1,9 @@
 import {
   FREIGHTER_ID,
+  ISupportedWallet,
   StellarWalletsKit,
   WalletNetwork,
-  WalletType,
+  allowAllModules,
 } from '@creit.tech/stellar-wallets-kit'
 import { useEffect, useState } from 'react'
 import { useAppContext } from '../context/appContext'
@@ -17,13 +18,6 @@ const addressToHistoricObject = (address: string) => {
   addressObject.address = address
   addressObject.displayName = `${address.slice(0, 4)}...${address.slice(-4)}`
   return addressObject
-}
-
-// Soroban is only supported on Futurenet right now
-const FUTURENET_DETAILS = {
-  network: 'FUTURENET',
-  networkUrl: 'https://horizon-futurenet.stellar.org',
-  networkPassphrase: 'Test SDF Future Network ; October 2022',
 }
 
 const ERRORS = {
@@ -50,17 +44,16 @@ export function useAccount(): Props {
 
   const [isLoading, setIsLoading] = useState(false)
 
-  // Update is not only Futurenet is available
-  const [selectedNetwork] = useState(FUTURENET_DETAILS)
   // Setup swc, user will set the desired wallet on connect
   const [SWKKit] = useState(
     new StellarWalletsKit({
       network: WalletNetwork.FUTURENET,
-      selectedWallet: FREIGHTER_ID,
+      selectedWalletId: FREIGHTER_ID,
+      modules: allowAllModules(),
     })
   )
 
-  const getWalletAddress = async (type: WalletType) => {
+  const getWalletAddress = async (type: string) => {
     try {
       setIsLoading(true)
       // Set selected wallet, network, and public key
@@ -85,13 +78,9 @@ export function useAccount(): Props {
   // will trigger autoconnect for users
   useEffect(() => {
     const storedWallet = localStorage.getItem(STORAGE_WALLET_KEY)
-    if (
-      !walletAddress &&
-      storedWallet &&
-      Object.values(WalletType).includes(storedWallet as WalletType)
-    ) {
+    if (!walletAddress && storedWallet) {
       ;(async () => {
-        await getWalletAddress(storedWallet as WalletType)
+        await getWalletAddress(storedWallet)
       })()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -101,9 +90,8 @@ export function useAccount(): Props {
     if (!walletAddress) {
       // See https://github.com/Creit-Tech/Stellar-Wallets-Kit/tree/main for more options
       await SWKKit.openModal({
-        allowedWallets,
-        onWalletSelected: async (option) => {
-          await getWalletAddress(option.type)
+        onWalletSelected: async (option: ISupportedWallet) => {
+          await getWalletAddress(option.id)
         },
       })
     }
