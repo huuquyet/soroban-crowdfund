@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
 import {
-  ISupportedWallet,
+  FREIGHTER_ID,
   StellarWalletsKit,
   WalletNetwork,
   WalletType,
-} from 'stellar-wallets-kit/build/module'
+} from '@creit.tech/stellar-wallets-kit'
+import { useEffect, useState } from 'react'
 import { useAppContext } from '../context/appContext'
 
 // returning the same object identity every time avoids unnecessary re-renders
@@ -33,9 +33,10 @@ const ERRORS = {
 const STORAGE_WALLET_KEY = 'wallet'
 
 const allowedWallets = [
-  // WalletType.ALBEDO,
-  WalletType.FREIGHTER,
-  // WalletType.XBULL,
+  // ALBEDO_ID,
+  FREIGHTER_ID,
+  // RABET_ID,
+  // XBULL_ID,
 ]
 
 type Props = {
@@ -54,8 +55,8 @@ export function useAccount(): Props {
   // Setup swc, user will set the desired wallet on connect
   const [SWKKit] = useState(
     new StellarWalletsKit({
-      network: selectedNetwork.networkPassphrase as WalletNetwork,
-      selectedWallet: WalletType.FREIGHTER,
+      network: WalletNetwork.FUTURENET,
+      selectedWallet: FREIGHTER_ID,
     })
   )
 
@@ -101,7 +102,7 @@ export function useAccount(): Props {
       // See https://github.com/Creit-Tech/Stellar-Wallets-Kit/tree/main for more options
       await SWKKit.openModal({
         allowedWallets,
-        onWalletSelected: async (option: ISupportedWallet) => {
+        onWalletSelected: async (option) => {
           await getWalletAddress(option.type)
         },
       })

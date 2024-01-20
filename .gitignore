@@ -4,10 +4,16 @@
 /shared/config.json
 # dependencies
 /node_modules
-/.pnp
+/.pnp.*
 .pnp.js
 # We use npm in this project.
-yarn.lock
+.yarn/*
+.yarn/install-state.gz
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # testing
 /coverage
