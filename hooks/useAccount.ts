@@ -65,7 +65,7 @@ export function useAccount(): Props {
       // Set selected wallet, network, and public key
       SWKKit.setWallet(type)
       const publicKey = await SWKKit.getPublicKey()
-      await SWKKit.setNetwork(WalletNetwork.FUTURENET)
+      SWKKit.setNetwork(WalletNetwork.FUTURENET)
 
       // Short timeout to prevent blick on loading address
       setTimeout(() => {
@@ -99,7 +99,7 @@ export function useAccount(): Props {
   const onConnect = async () => {
     if (!walletAddress) {
       // See https://github.com/Creit-Tech/Stellar-Wallets-Kit/tree/main for more options
-      await SWKKit.openModal({
+      SWKKit.openModal({
         allowedWallets,
         onWalletSelected: async (option: ISupportedWallet) => {
           await getWalletAddress(option.type)

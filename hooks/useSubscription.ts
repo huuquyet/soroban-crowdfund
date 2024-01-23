@@ -1,5 +1,5 @@
 import { SorobanRpc, xdr } from '@stellar/stellar-sdk'
-import * as React from 'react'
+import { useEffect } from 'react'
 import { server } from '../shared/contracts'
 
 /**
@@ -31,7 +31,7 @@ export function useSubscription(
   const id = `${contractId}:${topic}`
   paging[id] = paging[id] || {}
 
-  React.useEffect(() => {
+  useEffect(() => {
     let timeoutId: NodeJS.Timeout | null = null
     let stop = false
 

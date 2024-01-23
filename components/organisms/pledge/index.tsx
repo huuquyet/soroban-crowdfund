@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react'
+import { FunctionComponent, useEffect, useMemo, useState } from 'react'
 import { useAccount, useSubscription } from '../../../hooks'
 import {
   abundance as abundanceContract,
@@ -13,22 +13,20 @@ import { scValToNative, xdr } from '@stellar/stellar-sdk'
 import { Deposits, FormPledge } from '../../molecules'
 
 const Pledge: FunctionComponent = () => {
-  const [updatedAt, setUpdatedAt] = React.useState<number>(Date.now())
+  const [updatedAt, setUpdatedAt] = useState<number>(Date.now())
   const { account, isLoading, onConnect } = useAccount()
-
-  const [abundance, setAbundance] = React.useState<{
+  const [abundance, setAbundance] = useState<{
     balance: bigint
     decimals: number
     name: string
     symbol: string
   }>()
-
-  const [crowdfund, setCrowdfund] = React.useState<{
+  const [crowdfund, setCrowdfund] = useState<{
     deadline: Date
     target: bigint
   }>()
 
-  React.useEffect(() => {
+  useEffect(() => {
     ;(async () => {
       const balance = await abundanceContract.balance({
         id: crowdfundContract.options.contractId,
@@ -49,14 +47,14 @@ const Pledge: FunctionComponent = () => {
         target: target.result,
       })
     })()
-  }, [setAbundance, setCrowdfund])
+  }, [])
 
   const [targetReached, setTargetReached] = useState<boolean>(false)
 
   useSubscription(
     crowdfundContract.options.contractId,
     'pledged_amount_changed',
-    React.useMemo(
+    useMemo(
       () => (event) => {
         const eventTokenBalance = event.value
         setAbundance({
@@ -64,14 +62,14 @@ const Pledge: FunctionComponent = () => {
           balance: scValToNative(eventTokenBalance),
         })
       },
-      [abundance, setAbundance]
+      [abundance]
     )
   )
 
   useSubscription(
     crowdfundContract.options.contractId,
     'target_reached',
-    React.useMemo(
+    useMemo(
       () => () => {
         setTargetReached(true)
       },

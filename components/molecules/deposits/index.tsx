@@ -1,4 +1,4 @@
-import React from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { crowdfund } from '../../../shared/contracts'
 import { Utils } from '../../../shared/utils'
 import { Spacer } from '../../atoms/spacer'
@@ -12,14 +12,16 @@ export interface IDepositsProps {
 }
 
 export function Deposits(props: IDepositsProps) {
-  const [balance, setBalance] = React.useState<bigint>(BigInt(0))
+  const [balance, setBalance] = useState<bigint>(BigInt(0))
 
-  React.useEffect(() => {
-    crowdfund.balance({ user: props.address }).then((tx) => setBalance(tx.result))
-  }, [props.address, setBalance])
+  useEffect(() => {
+    ;(async () => {
+      await crowdfund.balance({ user: props.address }).then((tx) => setBalance(tx.result))
+    })()
+  }, [props.address])
 
   if (Number(balance) <= 0) {
-    return <React.Fragment />
+    return <Fragment />
   }
 
   return (

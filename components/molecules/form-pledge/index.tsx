@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react'
+import { FunctionComponent, useEffect, useState } from 'react'
 import { abundance, crowdfund } from '../../../shared/contracts'
 import { Utils } from '../../../shared/utils'
 import { AmountInput, Button, Checkbox } from '../../atoms'
@@ -57,25 +57,22 @@ function MintButton({
 }
 
 const FormPledge: FunctionComponent<IFormPledgeProps> = (props) => {
-  const [balance, setBalance] = React.useState<bigint>(BigInt(0))
-  const [decimals, setDecimals] = React.useState<number>(0)
-  const [symbol, setSymbol] = React.useState<string>()
+  const [balance, setBalance] = useState<bigint>(BigInt(0))
+  const [decimals, setDecimals] = useState<number>(0)
+  const [symbol, setSymbol] = useState<string>()
 
   const [amount, setAmount] = useState<number>()
   const [resultSubmit, setResultSubmit] = useState<IResultSubmit | undefined>()
   const [input, setInput] = useState('')
   const [isSubmitting, setSubmitting] = useState(false)
 
-  React.useEffect(() => {
+  useEffect(() => {
     ;(async () => {
-      const balance = await abundance.balance({ id: props.account })
-      const decimals = await abundance.decimals()
-      const symbol = await abundance.symbol()
-      setBalance(balance.result)
-      setDecimals(decimals.result)
-      setSymbol(symbol.result.toString())
+      await abundance.balance({ id: props.account }).then((tx) => setBalance(tx.result))
+      await abundance.decimals().then((tx) => setDecimals(tx.result))
+      await abundance.symbol().then((tx) => setSymbol(tx.result.toString()))
     })()
-  }, [props.account, setBalance, setDecimals, setSymbol])
+  }, [props.account])
 
   const clearInput = (): void => {
     setInput('')
