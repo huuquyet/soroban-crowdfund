@@ -12,18 +12,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/biome@npm:^1.5.2":
-  version: 1.5.2
-  resolution: "@biomejs/biome@npm:1.5.2"
+"@biomejs/biome@npm:^1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/biome@npm:1.5.3"
   dependencies:
-    "@biomejs/cli-darwin-arm64": "npm:1.5.2"
-    "@biomejs/cli-darwin-x64": "npm:1.5.2"
-    "@biomejs/cli-linux-arm64": "npm:1.5.2"
-    "@biomejs/cli-linux-arm64-musl": "npm:1.5.2"
-    "@biomejs/cli-linux-x64": "npm:1.5.2"
-    "@biomejs/cli-linux-x64-musl": "npm:1.5.2"
-    "@biomejs/cli-win32-arm64": "npm:1.5.2"
-    "@biomejs/cli-win32-x64": "npm:1.5.2"
+    "@biomejs/cli-darwin-arm64": "npm:1.5.3"
+    "@biomejs/cli-darwin-x64": "npm:1.5.3"
+    "@biomejs/cli-linux-arm64": "npm:1.5.3"
+    "@biomejs/cli-linux-arm64-musl": "npm:1.5.3"
+    "@biomejs/cli-linux-x64": "npm:1.5.3"
+    "@biomejs/cli-linux-x64-musl": "npm:1.5.3"
+    "@biomejs/cli-win32-arm64": "npm:1.5.3"
+    "@biomejs/cli-win32-x64": "npm:1.5.3"
   dependenciesMeta:
     "@biomejs/cli-darwin-arm64":
       optional: true
@@ -43,62 +43,62 @@ __metadata:
       optional: true
   bin:
     biome: bin/biome
-  checksum: 9b56dfd722868efed0e891c7454f9bc6f322f702247688aede7e8071b5d7bedd110e4f762c01bceaa58141eef691339485256abd14c7ef4caae3659fe0aa7544
+  checksum: 470d0707fda5f029380648049e9eafdec4579d96b199a6f92401f67524b6739c136f139898db77f3fc2633ba5f56bdfb1d5193dacde31aff9811924d0ac32ddc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-arm64@npm:1.5.2":
-  version: 1.5.2
-  resolution: "@biomejs/cli-darwin-arm64@npm:1.5.2"
+"@biomejs/cli-darwin-arm64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-darwin-arm64@npm:1.5.3"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-x64@npm:1.5.2":
-  version: 1.5.2
-  resolution: "@biomejs/cli-darwin-x64@npm:1.5.2"
+"@biomejs/cli-darwin-x64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-darwin-x64@npm:1.5.3"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64-musl@npm:1.5.2":
-  version: 1.5.2
-  resolution: "@biomejs/cli-linux-arm64-musl@npm:1.5.2"
+"@biomejs/cli-linux-arm64-musl@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:1.5.3"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64@npm:1.5.2":
-  version: 1.5.2
-  resolution: "@biomejs/cli-linux-arm64@npm:1.5.2"
+"@biomejs/cli-linux-arm64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-linux-arm64@npm:1.5.3"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64-musl@npm:1.5.2":
-  version: 1.5.2
-  resolution: "@biomejs/cli-linux-x64-musl@npm:1.5.2"
+"@biomejs/cli-linux-x64-musl@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-linux-x64-musl@npm:1.5.3"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64@npm:1.5.2":
-  version: 1.5.2
-  resolution: "@biomejs/cli-linux-x64@npm:1.5.2"
+"@biomejs/cli-linux-x64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-linux-x64@npm:1.5.3"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-arm64@npm:1.5.2":
-  version: 1.5.2
-  resolution: "@biomejs/cli-win32-arm64@npm:1.5.2"
+"@biomejs/cli-win32-arm64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-win32-arm64@npm:1.5.3"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-x64@npm:1.5.2":
-  version: 1.5.2
-  resolution: "@biomejs/cli-win32-x64@npm:1.5.2"
+"@biomejs/cli-win32-x64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-win32-x64@npm:1.5.3"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -788,7 +788,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stellar/stellar-sdk@npm:11.2.0, @stellar/stellar-sdk@npm:^11.2.0":
+"@stellar/stellar-base@npm:^10.0.2":
+  version: 10.0.2
+  resolution: "@stellar/stellar-base@npm:10.0.2"
+  dependencies:
+    "@stellar/js-xdr": "npm:^3.0.1"
+    base32.js: "npm:^0.1.0"
+    bignumber.js: "npm:^9.1.2"
+    buffer: "npm:^6.0.3"
+    sha.js: "npm:^2.3.6"
+    sodium-native: "npm:^4.0.5"
+    tweetnacl: "npm:^1.0.3"
+    typescript: "npm:^5.3.3"
+  dependenciesMeta:
+    sodium-native:
+      optional: true
+  checksum: 90593e1f45cbde740a5f3be58739c13a65453dd3058f0726dffa66e80b84faef9c49f943b8c4dd11e2a078f1a77534faef7cda00e50251f05909a4a66e53e140
+  languageName: node
+  linkType: hard
+
+"@stellar/stellar-sdk@npm:11.2.0":
   version: 11.2.0
   resolution: "@stellar/stellar-sdk@npm:11.2.0"
   dependencies:
@@ -800,6 +819,22 @@ __metadata:
     toml: "npm:^3.0.0"
     urijs: "npm:^1.19.1"
   checksum: a3470cd18276d8007a39bd2706cb5d8000bb16000635dd34f7e35a09ba2c7248a6d8250ec0c3c309cbdc82d40e318a8f851962c6b6d033abdb9f5c01e96e943c
+  languageName: node
+  linkType: hard
+
+"@stellar/stellar-sdk@npm:^11.2.1":
+  version: 11.2.1
+  resolution: "@stellar/stellar-sdk@npm:11.2.1"
+  dependencies:
+    "@stellar/stellar-base": "npm:^10.0.2"
+    axios: "npm:^1.6.5"
+    bignumber.js: "npm:^9.1.2"
+    eventsource: "npm:^2.0.2"
+    randombytes: "npm:^2.1.0"
+    toml: "npm:^3.0.0"
+    typescript: "npm:^5.3.3"
+    urijs: "npm:^1.19.1"
+  checksum: 318b9b0f612bb3c290bedf0f9e55363ec0fa970cc8096a13644fedf595c28e4d242e82c5f0a983e843ed5fe599a404b2ee85a33b0a9e8ba5e23b48ff6674e98d
   languageName: node
   linkType: hard
 
@@ -1172,14 +1207,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"abundance-token@file:.soroban/contracts/token::locator=soroban-example-dapp%40workspace%3A.":
+"abundance-token@file:.soroban/contracts/token::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "abundance-token@file:.soroban/contracts/token#.soroban/contracts/token::hash=ea99fa&locator=soroban-example-dapp%40workspace%3A."
+  resolution: "abundance-token@file:.soroban/contracts/token#.soroban/contracts/token::hash=c3d93e&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.7.1"
     "@stellar/stellar-sdk": "npm:11.2.0"
     buffer: "npm:6.0.3"
-  checksum: 4ccc5930952d2d465f12a08eed3a29958672363a2e248aa7c6c88579068a134e7a5cb97ea435045ef163c860d48790e3984d6964bfbb6df9167296c7877cdf00
+  checksum: 23159a7a942c75effd59b4ef88ef67016c02ac72b23fd8702716627ac58691e8a335f11ca1e2c06947f2da7dc5321f3293ca097534163fdab3020950c157720a
   languageName: node
   linkType: hard
 
@@ -1619,14 +1654,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"crowdfund-contract@file:.soroban/contracts/crowdfund::locator=soroban-example-dapp%40workspace%3A.":
+"crowdfund-contract@file:.soroban/contracts/crowdfund::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "crowdfund-contract@file:.soroban/contracts/crowdfund#.soroban/contracts/crowdfund::hash=d61b69&locator=soroban-example-dapp%40workspace%3A."
+  resolution: "crowdfund-contract@file:.soroban/contracts/crowdfund#.soroban/contracts/crowdfund::hash=10c6bc&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.7.1"
     "@stellar/stellar-sdk": "npm:11.2.0"
     buffer: "npm:6.0.3"
-  checksum: 4fd8647b14529e731af6fd7f48aee09f53d3eedfb35ba05bd96b8808599dec7f46a812d91e22ada4e3e7108a7cc33cf7f16644bea7f36a4a127a24bed66b2ac0
+  checksum: 58e738848a285622a18e63114e79b46f1915b25e65d755962dd6abd4f93a0f688bbcf9e07a89abc8903f092383e466f2bcb82dd3ea820f4c59fbc09774612e6e
   languageName: node
   linkType: hard
 
@@ -3497,7 +3532,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sodium-native@npm:^4.0.1":
+"sodium-native@npm:^4.0.1, sodium-native@npm:^4.0.5":
   version: 4.0.5
   resolution: "sodium-native@npm:4.0.5"
   dependencies:
@@ -3525,12 +3560,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"soroban-example-dapp@workspace:.":
+"soroban-crowdfund@workspace:.":
   version: 0.0.0-use.local
-  resolution: "soroban-example-dapp@workspace:."
+  resolution: "soroban-crowdfund@workspace:."
   dependencies:
-    "@biomejs/biome": "npm:^1.5.2"
-    "@stellar/stellar-sdk": "npm:^11.2.0"
+    "@biomejs/biome": "npm:^1.5.3"
+    "@stellar/stellar-sdk": "npm:^11.2.1"
     "@types/node": "npm:^20.11.5"
     "@types/react": "npm:^18.2.48"
     abundance-token: "file:.soroban/contracts/token"

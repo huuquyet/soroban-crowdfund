@@ -27,8 +27,7 @@ tasks:
     init: |
       # make all
     command: |
-      yarn install
-      yarn setup
+      npm run setup
       yarn dev
 vscode:
   extensions:
