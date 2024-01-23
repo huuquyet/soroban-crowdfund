@@ -847,6 +847,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/humanize-duration@npm:^3.27.4":
+  version: 3.27.4
+  resolution: "@types/humanize-duration@npm:3.27.4"
+  checksum: 0d92b036ac284c4ae248dca6efa826f9d397e7369f2d5e11de1813e05b32fd44e3d696f999acdc5a7eb412efc33668b8a68f6ad671392c0bbcf797a6329d674f
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:^20.11.5":
   version: 20.11.5
   resolution: "@types/node@npm:20.11.5"
@@ -1209,12 +1216,12 @@ __metadata:
 
 "abundance-token@file:.soroban/contracts/token::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "abundance-token@file:.soroban/contracts/token#.soroban/contracts/token::hash=c3d93e&locator=soroban-crowdfund%40workspace%3A."
+  resolution: "abundance-token@file:.soroban/contracts/token#.soroban/contracts/token::hash=8eb997&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.7.1"
     "@stellar/stellar-sdk": "npm:11.2.0"
     buffer: "npm:6.0.3"
-  checksum: 23159a7a942c75effd59b4ef88ef67016c02ac72b23fd8702716627ac58691e8a335f11ca1e2c06947f2da7dc5321f3293ca097534163fdab3020950c157720a
+  checksum: ac4fc2d530ec1d3b1639076a32cf2e702faf44ef39f31dc4aca34c50d6cd5c83da18cb57bddafbb048911e6d1fbf3ab46669f2c8f0622cf5d2aeb19108282ce9
   languageName: node
   linkType: hard
 
@@ -1656,12 +1663,12 @@ __metadata:
 
 "crowdfund-contract@file:.soroban/contracts/crowdfund::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "crowdfund-contract@file:.soroban/contracts/crowdfund#.soroban/contracts/crowdfund::hash=10c6bc&locator=soroban-crowdfund%40workspace%3A."
+  resolution: "crowdfund-contract@file:.soroban/contracts/crowdfund#.soroban/contracts/crowdfund::hash=8599b3&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.7.1"
     "@stellar/stellar-sdk": "npm:11.2.0"
     buffer: "npm:6.0.3"
-  checksum: 58e738848a285622a18e63114e79b46f1915b25e65d755962dd6abd4f93a0f688bbcf9e07a89abc8903f092383e466f2bcb82dd3ea820f4c59fbc09774612e6e
+  checksum: 27384684167c38b58236f3b7df5aab10ec1ad7b54c173c1b90e31763f958003e44d7d2ee91529e7db20998589452e32984f3146759830607358af6e60f6eeb17
   languageName: node
   linkType: hard
 
@@ -3566,6 +3573,7 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:^1.5.3"
     "@stellar/stellar-sdk": "npm:^11.2.1"
+    "@types/humanize-duration": "npm:^3.27.4"
     "@types/node": "npm:^20.11.5"
     "@types/react": "npm:^18.2.48"
     abundance-token: "file:.soroban/contracts/token"

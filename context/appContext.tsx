@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from 'react'
 
 const AppContext = createContext({
   walletAddress: '',
-  setWalletAddress: (value: string) => value,
+  setWalletAddress: (value: string) => {value}
 })
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
