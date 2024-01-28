@@ -13,7 +13,7 @@ import styles from './style.module.css'
 
 const Pledge: FunctionComponent = () => {
   const [updatedAt, setUpdatedAt] = useState<number>(Date.now())
-  const { account, isLoading, onConnect } = useAccount()
+  const account = useAccount()
   const [abundance, setAbundance] = useState<{
     balance: bigint
     decimals: number
@@ -57,7 +57,7 @@ const Pledge: FunctionComponent = () => {
       () => (event) => {
         const eventTokenBalance = event.value
         setAbundance({
-          ...abundance,
+          ...abundance!,
           balance: scValToNative(eventTokenBalance),
         })
       },

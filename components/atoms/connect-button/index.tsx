@@ -11,7 +11,7 @@ export function ConnectButton({ label, isHigher }: ConnectButtonProps) {
     <button
       className={styles.button}
       style={{ height: isHigher ? 50 : 38 }}
-      onClick={setAllowed}
+      onClick={async () => await setAllowed()}
       type="button"
     >
       {label}

@@ -491,12 +491,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.11.7":
-  version: 20.11.7
-  resolution: "@types/node@npm:20.11.7"
+"@types/node@npm:^20.11.8":
+  version: 20.11.8
+  resolution: "@types/node@npm:20.11.8"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: ba4b41542b64f21a881a277189e761c553d00af0b1c02f2d8a47ebe8bc29a00ed21b45adf0bf9af2cf8ea6c92a443853d4f7b690081ceaecc150719cc574e9ea
+  checksum: cd4eff91ff2291b909cf8ce81f3117effcfd59c435a9d42a9a085f5de8f414eabfbe4558f53a275eedc280a97393d71084812d91cf31fba436a01369d80133b5
   languageName: node
   linkType: hard
 
@@ -543,12 +543,12 @@ __metadata:
 
 "abundance-token@file:./.soroban/contracts/token::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "abundance-token@file:./.soroban/contracts/token#./.soroban/contracts/token::hash=48092e&locator=soroban-crowdfund%40workspace%3A."
+  resolution: "abundance-token@file:./.soroban/contracts/token#./.soroban/contracts/token::hash=22947b&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.7.1"
     "@stellar/stellar-sdk": "npm:11.2.0"
     buffer: "npm:6.0.3"
-  checksum: 684bbee2729e785758f74ec5eaa8ff46aaa5088f6b7627f47e1ba26782db7e38d0a21b0395c860c8efa3c644f4aecf04cd236b0b1a702eef8f2e694b68d158c5
+  checksum: b4aba7fa22aefa53770adcd9a63b9c4c0bbd46ae470fb48ed8f79c389371a713e58908bfaeed07d514957a3a4e8f2fa8989bd0b55fc81420177b5f6de8a2c494
   languageName: node
   linkType: hard
 
@@ -806,12 +806,12 @@ __metadata:
 
 "crowdfund-contract@file:./.soroban/contracts/crowdfund::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "crowdfund-contract@file:./.soroban/contracts/crowdfund#./.soroban/contracts/crowdfund::hash=61fd0a&locator=soroban-crowdfund%40workspace%3A."
+  resolution: "crowdfund-contract@file:./.soroban/contracts/crowdfund#./.soroban/contracts/crowdfund::hash=c8b45f&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.7.1"
     "@stellar/stellar-sdk": "npm:11.2.0"
     buffer: "npm:6.0.3"
-  checksum: ce2f7e641cc8b8aa47918640a2b4562eed9b09aeccbf9a113bb78cce7e1bf518758a27d1a407283493bdc6ac4f3c582ebc37bca384d9f820a7e601aac7452c47
+  checksum: 6cc96f4b8ce31da29da3dc8c13e720d8f5108435fae46686d7cee7c8736ca1605c0d35dfecc4469942b4763fa1c713cfe45afd3c127b010c038ef73b1c8bf832
   languageName: node
   linkType: hard
 
@@ -1860,7 +1860,7 @@ __metadata:
     "@stellar/freighter-api": "npm:^1.7.1"
     "@stellar/stellar-sdk": "npm:^11.2.1"
     "@types/humanize-duration": "npm:^3.27.4"
-    "@types/node": "npm:^20.11.7"
+    "@types/node": "npm:^20.11.8"
     "@types/react": "npm:^18.2.48"
     abundance-token: "file:./.soroban/contracts/token"
     axios: "npm:^1.6.7"

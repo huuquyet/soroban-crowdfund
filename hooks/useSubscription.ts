@@ -28,7 +28,7 @@ type EventResponse = SorobanRpc.Api.GetEventsResponse['events'][number]
 export function useSubscription(
   contractId: string,
   topic: string,
-  onEvent: (event: EventsResponse) => void,
+  onEvent: (event: EventResponse) => void,
   pollInterval = 5000
 ) {
   const id = `${contractId}:${topic}`
