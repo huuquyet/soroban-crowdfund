@@ -1,4 +1,4 @@
-import React, { Dispatch, ReactNode, SetStateAction } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 import styles from './style.module.css'
 
 export interface CheckboxProps {

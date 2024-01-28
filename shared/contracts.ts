@@ -2,6 +2,7 @@ import { SorobanRpc } from '@stellar/stellar-sdk'
 import * as Abundance from 'abundance-token'
 import * as Crowdfund from 'crowdfund-contract'
 import config from './config.json'
+
 const { network, rpcUrl } = config
 
 export const abundance = new Abundance.Contract({

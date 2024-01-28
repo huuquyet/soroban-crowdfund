@@ -13,6 +13,9 @@ type PagingKey = string
  */
 const paging: Record<PagingKey, { lastLedgerStart?: number; pagingToken?: string }> = {}
 
+// `EventResponse` is not exported from stellar-sdk
+type EventResponse = SorobanRpc.Api.GetEventsResponse['events'][number]
+
 /**
  * Subscribe to events for a given topic from a given contract, using a library
  * generated with `soroban contract bindings typescript`.
@@ -25,7 +28,7 @@ const paging: Record<PagingKey, { lastLedgerStart?: number; pagingToken?: string
 export function useSubscription(
   contractId: string,
   topic: string,
-  onEvent: (event: SorobanRpc.Api.GetEventsResponse['events'][number]) => void,
+  onEvent: (event: EventsResponse) => void,
   pollInterval = 5000
 ) {
   const id = `${contractId}:${topic}`

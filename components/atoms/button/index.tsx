@@ -1,4 +1,3 @@
-import React, { ReactNode } from 'react'
 import { Loading } from '../loading'
 import styles from './style.module.css'
 

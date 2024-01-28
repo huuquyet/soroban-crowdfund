@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import React from 'react'
 import avatar from '../../../assets/avatar.png'
 import picture from '../../../assets/example.png'
 import { AuthorInfo } from '../../atoms'

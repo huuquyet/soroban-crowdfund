@@ -30,6 +30,9 @@ if [[ "$SOROBAN_RPC_HOST" == "" ]]; then
     SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"
   elif [[ "$NETWORK" == "futurenet" ]]; then
     SOROBAN_RPC_HOST="https://rpc-futurenet.stellar.org"
+    SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"  
+  elif [[ "$NETWORK" == "testnet" ]]; then
+    SOROBAN_RPC_HOST="https://soroban-testnet.stellar.org"
     SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"
   else
      # assumes standalone on quickstart, which has the soroban/rpc path
@@ -49,8 +52,12 @@ futurenet)
   SOROBAN_NETWORK_PASSPHRASE="Test SDF Future Network ; October 2022"
   FRIENDBOT_URL="https://friendbot-futurenet.stellar.org/"
   ;;
+testnet)
+  SOROBAN_NETWORK_PASSPHRASE="Test SDF Network ; September 2015"
+  FRIENDBOT_URL="https://friendbot.stellar.org"
+  ;;
 *)
-  echo "Usage: $0 standalone|futurenet [rpc-host]"
+  echo "Usage: $0 standalone|futurenet|testnet [rpc-host]"
   exit 1
   ;;
 esac
@@ -124,7 +131,7 @@ soroban contract invoke \
   initialize \
   --recipient "$ABUNDANCE_ADMIN_ADDRESS" \
   --deadline "$deadline" \
-  --target_amount "10000000000" \
+  --target_amount "1000000000" \
   --token "$ABUNDANCE_ID"
 
 echo "Generate bindings contracts"

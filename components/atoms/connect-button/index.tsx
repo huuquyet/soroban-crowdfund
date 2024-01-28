@@ -1,23 +1,17 @@
-import React from 'react'
-import { Loading } from '../loading'
+import { setAllowed } from '@stellar/freighter-api'
 import styles from './style.module.css'
 
 export interface ConnectButtonProps {
   label: string
   isHigher?: boolean
-  isLoading?: boolean
-  onClick: () => void
 }
 
-export function ConnectButton({ label, isHigher, isLoading, onClick }: ConnectButtonProps) {
-  if (isLoading) {
-    return <Loading size={isHigher ? 50 : 38} />
-  }
+export function ConnectButton({ label, isHigher }: ConnectButtonProps) {
   return (
     <button
       className={styles.button}
       style={{ height: isHigher ? 50 : 38 }}
-      onClick={onClick}
+      onClick={setAllowed}
       type="button"
     >
       {label}

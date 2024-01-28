@@ -1,3 +1,4 @@
+import { scValToNative, xdr } from '@stellar/stellar-sdk'
 import { FunctionComponent, useEffect, useMemo, useState } from 'react'
 import { useAccount, useSubscription } from '../../../hooks'
 import {
@@ -7,10 +8,8 @@ import {
 import { Utils } from '../../../shared/utils'
 import { Card, ConnectButton, Loading, ProgressBar } from '../../atoms'
 import { Spacer } from '../../atoms/spacer'
-import styles from './style.module.css'
-
-import { scValToNative, xdr } from '@stellar/stellar-sdk'
 import { Deposits, FormPledge } from '../../molecules'
+import styles from './style.module.css'
 
 const Pledge: FunctionComponent = () => {
   const [updatedAt, setUpdatedAt] = useState<number>(Date.now())
@@ -58,7 +57,7 @@ const Pledge: FunctionComponent = () => {
       () => (event) => {
         const eventTokenBalance = event.value
         setAbundance({
-          ...abundance!,
+          ...abundance,
           balance: scValToNative(eventTokenBalance),
         })
       },
@@ -116,12 +115,7 @@ const Pledge: FunctionComponent = () => {
                 onPledge={() => setUpdatedAt(Date.now())}
               />
             ) : (
-              <ConnectButton
-                label="Connect wallet to pledge"
-                isHigher={true}
-                isLoading={isLoading}
-                onClick={onConnect}
-              />
+              <ConnectButton label="Connect wallet to pledge" isHigher={true} />
             ))}
           {account && (
             <Deposits
