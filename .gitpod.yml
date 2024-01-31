@@ -26,6 +26,7 @@ tasks:
   - name: CLI - Sandbox
     init: |
       # make all
+      chmod +x ./initialize.sh
     command: |
       npm run setup
       yarn dev

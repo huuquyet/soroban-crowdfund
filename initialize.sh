@@ -30,7 +30,7 @@ if [[ "$SOROBAN_RPC_HOST" == "" ]]; then
     SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"
   elif [[ "$NETWORK" == "futurenet" ]]; then
     SOROBAN_RPC_HOST="https://rpc-futurenet.stellar.org"
-    SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"  
+    SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"
   elif [[ "$NETWORK" == "testnet" ]]; then
     SOROBAN_RPC_HOST="https://soroban-testnet.stellar.org"
     SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"

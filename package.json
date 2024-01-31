@@ -31,11 +31,11 @@
   "devDependencies": {
     "@biomejs/biome": "^1.5.3",
     "@types/humanize-duration": "^3.27.4",
-    "@types/node": "^20.11.8",
+    "@types/node": "^20.11.13",
     "@types/react": "^18.2.48",
     "pino-pretty": "^10.3.1",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3"
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.1.0"
 }
