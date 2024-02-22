@@ -1,11 +1,12 @@
-import { getUserInfo, isConnected } from '@stellar/freighter-api'
 import { useEffect, useState } from 'react'
-
-let address: string
-
-const addressLookup = (async () => {
-  if (await isConnected()) return getUserInfo()
-})()
+import {
+  FREIGHTER_ID,
+  FreighterModule,
+  ISupportedWallet,
+  StellarWalletsKit,
+  WalletNetwork,
+} from '@creit.tech/stellar-wallets-kit'
+import { useAppContext } from '../context/appContext'
 
 // returning the same object identity every time avoids unnecessary re-renders
 const addressObject = {
@@ -19,35 +20,91 @@ const addressToHistoricObject = (address: string) => {
   return addressObject
 }
 
-/**
- * Returns an object containing `address` and `displayName` properties, with
- * the address fetched from Freighter's `getPublicKey` method in a
- * render-friendly way.
- *
- * Before the address is fetched, returns null.
- *
- * Caches the result so that the Freighter lookup only happens once, no matter
- * how many times this hook is called.
- *
- * NOTE: This does not update the return value if the user changes their
- * Freighter settings; they will need to refresh the page.
- */
-export function useAccount(): typeof addressObject | null {
-  const [, setLoading] = useState(address === undefined)
+// Soroban is only supported on Futurenet right now
+const FUTURENET_DETAILS = {
+  network: 'FUTURENET',
+  networkUrl: 'https://horizon-futurenet.stellar.org',
+  networkPassphrase: 'Test SDF Future Network ; October 2022',
+}
 
+const STORAGE_WALLET_KEY = 'wallet'
+
+type Props = {
+  account: typeof addressObject | null
+  onConnect: () => void
+  onDisconnect: () => void
+  isLoading: boolean
+}
+export function useAccount(): Props {
+  const { walletAddress, setWalletAddress } = useAppContext()
+
+  const [isLoading, setIsLoading] = useState(false)
+
+  // Update is not only Futurenet is available
+  const [selectedNetwork] = useState(FUTURENET_DETAILS)
+  // Setup swc, user will set the desired wallet on connect
+  const kit = new StellarWalletsKit({
+      network: WalletNetwork.FUTURENET,
+      selectedWalletId: FREIGHTER_ID,
+      modules: [new FreighterModule()],
+    })
+
+  const getWalletAddress = async (id: any) => {
+    try {
+      setIsLoading(true)
+      // Set selected wallet, network, and public key
+      kit.setWallet(id)
+      const publicKey = await kit.getPublicKey()
+      kit.setNetwork(WalletNetwork.FUTURENET)
+
+      // Short timeout to prevent blick on loading address
+      setTimeout(() => {
+        setWalletAddress(publicKey)
+        localStorage.setItem(STORAGE_WALLET_KEY, id)
+        setIsLoading(false)
+      }, 500)
+    } catch (error) {
+      localStorage.removeItem(STORAGE_WALLET_KEY)
+      setIsLoading(false)
+      console.error(`Wallet connection rejected: ${error}`)
+    }
+  }
+
+  // if the walletType is stored in local storage the first opening the page
+  // will trigger autoconnect for users
   useEffect(() => {
-    if (address !== undefined) return
+    const storedWallet = localStorage.getItem(STORAGE_WALLET_KEY)
+    if (
+      !walletAddress &&
+      storedWallet) {
+      ;(async () => {
+        await getWalletAddress(storedWallet)
+      })()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [walletAddress, getWalletAddress])
 
-    addressLookup
-      .then((user) => {
-        if (user) address = user.publicKey
+  const onConnect = async () => {
+    if (!walletAddress) {
+      // See https://github.com/Creit-Tech/Stellar-Wallets-Kit/tree/main for more options
+      await kit.openModal({
+        onWalletSelected: async (option: ISupportedWallet) => {
+          await getWalletAddress(option.id)
+        },
       })
-      .finally(() => {
-        setLoading(false)
-      })
-  }, [address])
+    }
+  }
 
-  if (address) return addressToHistoricObject(address)
+  const onDisconnect = () => {
+    setWalletAddress('')
+    localStorage.removeItem(STORAGE_WALLET_KEY)
+    setIsLoading(false)
+  }
 
-  return null
+  return {
+    account: walletAddress ? addressToHistoricObject(walletAddress) : null,
+    onConnect,
+    onDisconnect,
+    isLoading,
+  }
 }

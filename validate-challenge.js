@@ -154,7 +154,6 @@ function validateProductionLink(productionLink) {
 
   const isProductionLinkValid = isLinkValid(productionLink)
   return (
-    productionLink.startsWith('https') &&
     productionLink.includes('vercel.app') &&
     isProductionLinkValid
   )

@@ -16,7 +16,7 @@
     "vscode": "yarn dlx @yarnpkg/sdks vscode"
   },
   "dependencies": {
-    "@stellar/freighter-api": "^1.7.1",
+    "@creit.tech/stellar-wallets-kit": "^0.6.1",
     "@stellar/stellar-sdk": "^11.2.1",
     "abundance-token": "file:./.soroban/contracts/token",
     "axios": "^1.6.7",

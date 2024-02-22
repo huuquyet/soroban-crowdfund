@@ -13,7 +13,7 @@ import styles from './style.module.css'
 
 const Pledge: FunctionComponent = () => {
   const [updatedAt, setUpdatedAt] = useState<number>(Date.now())
-  const account = useAccount()
+  const { account, isLoading, onConnect } = useAccount()
   const [abundance, setAbundance] = useState<{
     balance: bigint
     decimals: number
@@ -115,7 +115,12 @@ const Pledge: FunctionComponent = () => {
                 onPledge={() => setUpdatedAt(Date.now())}
               />
             ) : (
-              <ConnectButton label="Connect wallet to pledge" isHigher={true} />
+              <ConnectButton
+                label="Connect wallet to pledge"
+                isHigher={true}
+                isLoading={isLoading}
+                onClick={onConnect}
+              />
             ))}
           {account && (
             <Deposits
