@@ -72,7 +72,7 @@ const FormPledge: FunctionComponent<IFormPledgeProps> = (props) => {
       await abundance.decimals().then((tx) => setDecimals(tx.result))
       await abundance.symbol().then((tx) => setSymbol(tx.result.toString()))
     })()
-  }, [props.account])
+  }, [props.account, props.updatedAt])
 
   const clearInput = (): void => {
     setInput('')

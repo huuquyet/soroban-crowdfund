@@ -1,6 +1,7 @@
+import { useSorobanReact } from '@soroban-react/core'
 import { scValToNative, xdr } from '@stellar/stellar-sdk'
 import { FunctionComponent, useEffect, useMemo, useState } from 'react'
-import { useAccount, useSubscription } from '../../../hooks'
+import { useSubscription } from '../../../hooks'
 import {
   abundance as abundanceContract,
   crowdfund as crowdfundContract,
@@ -13,7 +14,8 @@ import styles from './style.module.css'
 
 const Pledge: FunctionComponent = () => {
   const [updatedAt, setUpdatedAt] = useState<number>(Date.now())
-  const account = useAccount()
+  const sorobanContext = useSorobanReact()
+  const account = sorobanContext.address ? sorobanContext.address : ''
   const [abundance, setAbundance] = useState<{
     balance: bigint
     decimals: number
@@ -46,7 +48,7 @@ const Pledge: FunctionComponent = () => {
         target: target.result,
       })
     })()
-  }, [])
+  }, [updatedAt])
 
   const [targetReached, setTargetReached] = useState<boolean>(false)
 
@@ -109,17 +111,21 @@ const Pledge: FunctionComponent = () => {
             (account ? (
               <FormPledge
                 decimals={abundance.decimals || 7}
-                account={account.address}
+                account={account}
                 symbol={abundance.symbol}
                 updatedAt={updatedAt}
                 onPledge={() => setUpdatedAt(Date.now())}
               />
             ) : (
-              <ConnectButton label="Connect wallet to pledge" isHigher={true} />
+              <ConnectButton
+                label="Connect wallet to pledge"
+                isHigher={true}
+                sorobanContext={sorobanContext}
+              />
             ))}
           {account && (
             <Deposits
-              address={account.address}
+              address={account}
               decimals={abundance.decimals || 7}
               name={abundance.name}
               symbol={abundance.symbol}

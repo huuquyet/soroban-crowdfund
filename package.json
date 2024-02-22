@@ -16,7 +16,6 @@
     "vscode": "yarn dlx @yarnpkg/sdks vscode"
   },
   "dependencies": {
-    "@creit.tech/stellar-wallets-kit": "^0.6.1",
     "@soroban-react/chains": "^9.0.0",
     "@soroban-react/core": "^9.0.0",
     "@soroban-react/freighter": "^9.0.0",

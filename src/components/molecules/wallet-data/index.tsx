@@ -1,20 +1,20 @@
-import { useAccount, useIsMounted } from '../../../hooks'
+import { useSorobanReact } from '@soroban-react/core'
 import { ConnectButton } from '../../atoms'
 import styles from './style.module.css'
 
 // TODO: Eliminate flash of unconnected content on loading
-export function WalletData() {
-  const mounted = useIsMounted()
-  const account = useAccount()
+export const WalletData = () => {
+  const sorobanContext = useSorobanReact()
+  const { activeChain } = sorobanContext
 
   return (
     <>
-      {mounted && account ? (
+      {activeChain ? (
         <div className={styles.displayData}>
-          <div className={styles.card}>{account.displayName}</div>
+          <div className={styles.card}>{activeChain.name}</div>
         </div>
       ) : (
-        <ConnectButton label="Connect Wallet" />
+        <ConnectButton label="Connect Wallet" sorobanContext={sorobanContext} />
       )}
     </>
   )
