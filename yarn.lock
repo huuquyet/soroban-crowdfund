@@ -615,12 +615,12 @@ __metadata:
 
 "abundance-token@file:./.soroban/contracts/token::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "abundance-token@file:./.soroban/contracts/token#./.soroban/contracts/token::hash=19fd5b&locator=soroban-crowdfund%40workspace%3A."
+  resolution: "abundance-token@file:./.soroban/contracts/token#./.soroban/contracts/token::hash=b2bbf0&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.7.1"
     "@stellar/stellar-sdk": "npm:11.2.0"
     buffer: "npm:6.0.3"
-  checksum: 10c0/89474ac9ffbd8c6507c86d7aefdcb88e4aaf0f39a3aa017b507ab20a997786538bcfc9df6b6a3648b20c4b3056ab2e66d4111c702bd594565c5bd3ca8a8c3cd6
+  checksum: 10c0/5cba7dce3fd96c5fc56f6c8c8fd6f6310be992bb332e2164ab70633606ae899954903b54c1bcbc3e393f73cdb2632f8f2dca6820320c1d357ded06eae42853ec
   languageName: node
   linkType: hard
 
@@ -878,12 +878,12 @@ __metadata:
 
 "crowdfund-contract@file:./.soroban/contracts/crowdfund::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "crowdfund-contract@file:./.soroban/contracts/crowdfund#./.soroban/contracts/crowdfund::hash=50071f&locator=soroban-crowdfund%40workspace%3A."
+  resolution: "crowdfund-contract@file:./.soroban/contracts/crowdfund#./.soroban/contracts/crowdfund::hash=9692d4&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.7.1"
     "@stellar/stellar-sdk": "npm:11.2.0"
     buffer: "npm:6.0.3"
-  checksum: 10c0/816a76c958f60ab3b6d5e4fef05e6edc46ad59f7b862b7e6d1a05f9d85ff01b859a2617cbab46986ce451c13ed13bac1b5fdc109ae3df067dfbee38aef282935
+  checksum: 10c0/ac959e8b37cee17eb7d8f201f1aeedf87ab5b8d36adbf93da4cd058e35c1ff6019a038be9308b307831fe1bea025ee81e646f19889758bdbb62c37011af916d2
   languageName: node
   linkType: hard
 
@@ -1172,9 +1172,9 @@ __metadata:
   linkType: hard
 
 "ip@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "ip@npm:2.0.0"
-  checksum: 10c0/8d186cc5585f57372847ae29b6eba258c68862055e18a75cc4933327232cb5c107f89800ce29715d542eef2c254fbb68b382e780a7414f9ee7caf60b7a473958
+  version: 2.0.1
+  resolution: "ip@npm:2.0.1"
+  checksum: 10c0/cab8eb3e88d0abe23e4724829621ec4c4c5cb41a7f936a2e626c947128c1be16ed543448d42af7cca95379f9892bfcacc1ccd8d09bc7e8bea0e86d492ce33616
   languageName: node
   linkType: hard
 
