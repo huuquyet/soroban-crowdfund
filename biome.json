@@ -11,6 +11,7 @@
       "**/.next",
       "**/.pnp*",
       "**/.soroban",
+      "**/.vercel",
       "**/dist",
       "**/types",
       "**/public",

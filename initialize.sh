@@ -135,7 +135,7 @@ soroban contract invoke \
   --token "$ABUNDANCE_ID"
 
 echo "Generate bindings contracts"
-soroban contract bindings typescript --network $NETWORK --id $ABUNDANCE_ID --wasm $TOKEN_PATH".optimized.wasm" --output-dir ./.soroban/contracts/token --overwrite
-soroban contract bindings typescript --network $NETWORK --id $CROWDFUND_ID --wasm $CROWDFUND_PATH".optimized.wasm" --output-dir ./.soroban/contracts/crowdfund --overwrite
+soroban contract bindings typescript --network $NETWORK --id $ABUNDANCE_ID --wasm $TOKEN_PATH".optimized.wasm" --output-dir ./.soroban/contracts/token --overwrite || true
+soroban contract bindings typescript --network $NETWORK --id $CROWDFUND_ID --wasm $CROWDFUND_PATH".optimized.wasm" --output-dir ./.soroban/contracts/crowdfund --overwrite || true
 
 echo "Done"

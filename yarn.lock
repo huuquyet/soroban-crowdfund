@@ -103,7 +103,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@creit-tech/xbull-wallet-connect@github:Creit-Tech/xBull-Wallet-Connect#0.2.0":
+"@creit-tech/xbull-wallet-connect@github:Creit-Tech/xBull-Wallet-Connect, @creit-tech/xbull-wallet-connect@github:Creit-Tech/xBull-Wallet-Connect#0.2.0":
   version: 0.2.0
   resolution: "@creit-tech/xbull-wallet-connect@https://github.com/Creit-Tech/xBull-Wallet-Connect.git#commit=a93e2e0d97c61bbd83fedcca0c71feef9f28b2d3"
   dependencies:
@@ -440,6 +440,67 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@soroban-react/chains@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@soroban-react/chains@npm:9.0.0"
+  dependencies:
+    "@soroban-react/types": "npm:^9.0.0"
+    stellar-sdk: "npm:11.1.0"
+  checksum: 10c0/e51d224e2cd3461428042d59ad4920d5b75adf70e6a19b194836762a7cf80c0a6e877b7218cec8953832fb8b6235dcfc1774c757261fb58fe115327e27d476f1
+  languageName: node
+  linkType: hard
+
+"@soroban-react/core@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@soroban-react/core@npm:9.0.0"
+  dependencies:
+    "@soroban-react/freighter": "npm:^9.0.0"
+    "@soroban-react/types": "npm:^9.0.0"
+    "@soroban-react/xbull": "npm:^1.0.1"
+    stellar-sdk: "npm:11.1.0"
+  peerDependencies:
+    react: ">=16.8"
+  checksum: 10c0/855c056c14e2bbe4d93c070e7653ccfafdb90a3c8ce4b7f760c530c71fc667901c482f6af1b0b1f37a5ccb41acb75d19382fb348c8d5a01dfe68b7e997d0ffda
+  languageName: node
+  linkType: hard
+
+"@soroban-react/freighter@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@soroban-react/freighter@npm:9.0.0"
+  dependencies:
+    "@soroban-react/types": "npm:^9.0.0"
+    "@stellar/freighter-api": "npm:1.7.1"
+  checksum: 10c0/02ceff26480ed55933e174d58a968d188b7a6cfa3949adf623b388dcdc9d526a5e091f83cc9585a92e3fc7ddad6c61e634399b9586bd6a09443e641b5f1eb054
+  languageName: node
+  linkType: hard
+
+"@soroban-react/types@npm:8.0.0":
+  version: 8.0.0
+  resolution: "@soroban-react/types@npm:8.0.0"
+  checksum: 10c0/a55f40d7c1abe792516720a8721b64a4b1ab0450bfbb0825fe8c89a789bd77e00019327397e41b983a504a257bbf2d85b64427ddba965b1b4d0e85982c8c943d
+  languageName: node
+  linkType: hard
+
+"@soroban-react/types@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@soroban-react/types@npm:9.0.0"
+  checksum: 10c0/1cd5048f126dd824c89ca1b7bd2f903a5a54e5e6dfa6daac66249b42968c5b66f780a3be57d5299c2475cf82dabfe5fe8bc61807849098e7c7de1cdae1f92277
+  languageName: node
+  linkType: hard
+
+"@soroban-react/xbull@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@soroban-react/xbull@npm:1.0.1"
+  dependencies:
+    "@creit-tech/xbull-wallet-connect": "github:Creit-Tech/xBull-Wallet-Connect"
+    "@soroban-react/types": "npm:8.0.0"
+    stellar-sdk: "npm:11.1.0"
+  peerDependencies:
+    react: ">=16.8"
+  checksum: 10c0/c69afd913d82aebcc15f4f7bb7f2a9bc815db4e7103c626cc0f0411ef27b622aacd3b5f9e1cf8bd4e70efd684b92f0a92c1a35446d04b207c9f42922182707e1
+  languageName: node
+  linkType: hard
+
 "@stellar/freighter-api@npm:1.7.0":
   version: 1.7.0
   resolution: "@stellar/freighter-api@npm:1.7.0"
@@ -447,7 +508,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stellar/freighter-api@npm:1.7.1":
+"@stellar/freighter-api@npm:1.7.1, @stellar/freighter-api@npm:^1.7.1":
   version: 1.7.1
   resolution: "@stellar/freighter-api@npm:1.7.1"
   checksum: 10c0/f18ac804a5efb29609e3b599b0ab715a008f3c67313a3e9521dc5796ab834d50d1e28c1a1a60fb30266578329eb5fc09c1c9692d448744dae26d5fc193242f34
@@ -676,6 +737,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:^1.6.0, axios@npm:^1.6.7":
+  version: 1.6.7
+  resolution: "axios@npm:1.6.7"
+  dependencies:
+    follow-redirects: "npm:^1.15.4"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10c0/131bf8e62eee48ca4bd84e6101f211961bf6a21a33b95e5dfb3983d5a2fe50d9fffde0b57668d7ce6f65063d3dc10f2212cbcb554f75cfca99da1c73b210358d
+  languageName: node
+  linkType: hard
+
 "axios@npm:^1.6.5":
   version: 1.6.5
   resolution: "axios@npm:1.6.5"
@@ -684,17 +756,6 @@ __metadata:
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
   checksum: 10c0/aeb9acf87590d8aa67946072ced38e01ca71f5dfe043782c0ccea667e5dd5c45830c08afac9be3d7c894f09684b8ab2a458f497d197b73621233bcf202d9d468
-  languageName: node
-  linkType: hard
-
-"axios@npm:^1.6.7":
-  version: 1.6.7
-  resolution: "axios@npm:1.6.7"
-  dependencies:
-    follow-redirects: "npm:^1.15.4"
-    form-data: "npm:^4.0.0"
-    proxy-from-env: "npm:^1.1.0"
-  checksum: 10c0/131bf8e62eee48ca4bd84e6101f211961bf6a21a33b95e5dfb3983d5a2fe50d9fffde0b57668d7ce6f65063d3dc10f2212cbcb554f75cfca99da1c73b210358d
   languageName: node
   linkType: hard
 
@@ -1959,6 +2020,11 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:^1.5.3"
     "@creit.tech/stellar-wallets-kit": "npm:^0.6.1"
+    "@soroban-react/chains": "npm:^9.0.0"
+    "@soroban-react/core": "npm:^9.0.0"
+    "@soroban-react/freighter": "npm:^9.0.0"
+    "@soroban-react/types": "npm:^9.0.0"
+    "@stellar/freighter-api": "npm:^1.7.1"
     "@stellar/stellar-sdk": "npm:^11.2.1"
     "@types/humanize-duration": "npm:^3.27.4"
     "@types/node": "npm:^20.11.13"
@@ -1998,6 +2064,21 @@ __metadata:
   dependencies:
     minipass: "npm:^7.0.3"
   checksum: 10c0/b091f2ae92474183c7ac5ed3f9811457e1df23df7a7e70c9476eaa9a0c4a0c8fc190fb45acefbf023ca9ee864dd6754237a697dc52a0fb182afe65d8e77443d8
+  languageName: node
+  linkType: hard
+
+"stellar-sdk@npm:11.1.0":
+  version: 11.1.0
+  resolution: "stellar-sdk@npm:11.1.0"
+  dependencies:
+    "@stellar/stellar-base": "npm:10.0.1"
+    axios: "npm:^1.6.0"
+    bignumber.js: "npm:^9.1.2"
+    eventsource: "npm:^2.0.2"
+    randombytes: "npm:^2.1.0"
+    toml: "npm:^3.0.0"
+    urijs: "npm:^1.19.1"
+  checksum: 10c0/07718ead15a496a589281ee8e9575486f5f2152fd3408f97800961955ede5aeefc10a7192dddaf14e9b6a5a3bde69cb31796beacd0d8c4d5f93af5b4e5cd2aaa
   languageName: node
   linkType: hard
 

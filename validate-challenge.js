@@ -153,10 +153,7 @@ function validateProductionLink(productionLink) {
   }
 
   const isProductionLinkValid = isLinkValid(productionLink)
-  return (
-    productionLink.includes('vercel.app') &&
-    isProductionLinkValid
-  )
+  return productionLink.includes('vercel.app') && isProductionLinkValid
 }
 
 /**
