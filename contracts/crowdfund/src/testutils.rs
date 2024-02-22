@@ -1,11 +1,11 @@
 #![cfg(test)]
 
-use crate::CrowdfundClient;
+use crate::contract::CrowdfundClient;
 
 use soroban_sdk::{Address, Env};
 
 pub fn register_test_contract(e: &Env) -> Address {
-    e.register_contract(None, crate::Crowdfund {})
+    e.register_contract(None, crate::contract::Crowdfund {})
 }
 
 pub struct Crowdfund {
