@@ -376,15 +376,15 @@ __metadata:
   linkType: hard
 
 "@npmcli/agent@npm:^2.0.0":
-  version: 2.2.0
-  resolution: "@npmcli/agent@npm:2.2.0"
+  version: 2.2.1
+  resolution: "@npmcli/agent@npm:2.2.1"
   dependencies:
     agent-base: "npm:^7.1.0"
     http-proxy-agent: "npm:^7.0.0"
     https-proxy-agent: "npm:^7.0.1"
     lru-cache: "npm:^10.0.1"
     socks-proxy-agent: "npm:^8.0.1"
-  checksum: 10c0/7b89590598476dda88e79c473766b67c682aae6e0ab0213491daa6083dcc0c171f86b3868f5506f22c09aa5ea69ad7dfb78f4bf39a8dca375d89a42f408645b3
+  checksum: 10c0/38ee5cbe8f3cde13be916e717bfc54fd1a7605c07af056369ff894e244c221e0b56b08ca5213457477f9bc15bca9e729d51a4788829b5c3cf296b3c996147f76
   languageName: node
   linkType: hard
 
@@ -472,10 +472,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stellar/js-xdr@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@stellar/js-xdr@npm:3.0.1"
-  checksum: 10c0/2c3780c39e273bd2eabcfe73966aa0303307885964c1ee1b00e2e5035a86823cd24a368002f5cedea9265ed2540e613ba5c7247abb60cdcf8783cbc611283ef8
+"@stellar/js-xdr@npm:^3.0.1, @stellar/js-xdr@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@stellar/js-xdr@npm:3.1.0"
+  checksum: 10c0/1b483355e42fe0e982fd46e1652c3cad85747061f2a950b95f0ea929ade6107e24755d0a96dad6e47a6f24549a6b6689f34a133914b2334ef634dc81734f36c4
   languageName: node
   linkType: hard
 
@@ -497,22 +497,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stellar/stellar-base@npm:^10.0.2":
-  version: 10.0.2
-  resolution: "@stellar/stellar-base@npm:10.0.2"
+"@stellar/stellar-base@npm:^11.0.0":
+  version: 11.0.0
+  resolution: "@stellar/stellar-base@npm:11.0.0"
   dependencies:
-    "@stellar/js-xdr": "npm:^3.0.1"
+    "@stellar/js-xdr": "npm:^3.1.0"
     base32.js: "npm:^0.1.0"
     bignumber.js: "npm:^9.1.2"
     buffer: "npm:^6.0.3"
     sha.js: "npm:^2.3.6"
-    sodium-native: "npm:^4.0.5"
+    sodium-native: "npm:^4.0.8"
     tweetnacl: "npm:^1.0.3"
     typescript: "npm:^5.3.3"
   dependenciesMeta:
     sodium-native:
       optional: true
-  checksum: 10c0/90593e1f45cbde740a5f3be58739c13a65453dd3058f0726dffa66e80b84faef9c49f943b8c4dd11e2a078f1a77534faef7cda00e50251f05909a4a66e53e140
+  checksum: 10c0/0d984ee36d2998a2850dce177f5c962f09ea2d8b0ef3c20b0cf62711eaee855b40dc8a37b369b43a787bbdcd766d703cbbe5eb137b0fe96d9483492fbcea3b97
   languageName: node
   linkType: hard
 
@@ -531,19 +531,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stellar/stellar-sdk@npm:^11.2.1":
-  version: 11.2.1
-  resolution: "@stellar/stellar-sdk@npm:11.2.1"
+"@stellar/stellar-sdk@npm:^11.2.2":
+  version: 11.2.2
+  resolution: "@stellar/stellar-sdk@npm:11.2.2"
   dependencies:
-    "@stellar/stellar-base": "npm:^10.0.2"
-    axios: "npm:^1.6.5"
+    "@stellar/stellar-base": "npm:^11.0.0"
+    axios: "npm:^1.6.7"
     bignumber.js: "npm:^9.1.2"
     eventsource: "npm:^2.0.2"
     randombytes: "npm:^2.1.0"
     toml: "npm:^3.0.0"
     typescript: "npm:^5.3.3"
     urijs: "npm:^1.19.1"
-  checksum: 10c0/318b9b0f612bb3c290bedf0f9e55363ec0fa970cc8096a13644fedf595c28e4d242e82c5f0a983e843ed5fe599a404b2ee85a33b0a9e8ba5e23b48ff6674e98d
+  checksum: 10c0/51a1ffec39c2d8bf7d6358ad3cb49170a8094500b0027beb0fdb19d0e12f4a5f938fedcde14dc964cd6362a0cc001cba325d2bc81b04f127dc589edf3124a04c
   languageName: node
   linkType: hard
 
@@ -563,12 +563,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.11.13":
-  version: 20.11.13
-  resolution: "@types/node@npm:20.11.13"
+"@types/node@npm:^20.11.20":
+  version: 20.11.20
+  resolution: "@types/node@npm:20.11.20"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/8ff8526fa0dbabcf4e9c538c6a7220675f750c39d0794e34998daa0656d7e0dfdf3e47403d2ab8beb756422a517e1f2646b4494afa59ef330495d65fc58fa4d8
+  checksum: 10c0/8e8de211e6d54425c603388a9b5cc9c434101985d0a1c88aabbf65d10df2b1fccd71855c20e61ae8a75c7aea56cb0f64e722cf7914cff1247d0b62ce21996ac4
   languageName: node
   linkType: hard
 
@@ -579,14 +579,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.2.48":
-  version: 18.2.48
-  resolution: "@types/react@npm:18.2.48"
+"@types/react@npm:^18.2.59":
+  version: 18.2.59
+  resolution: "@types/react@npm:18.2.59"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10c0/7e89f18ea2928b1638f564b156d692894dcb9352a7e0a807873c97e858abe1f23dbd165a25dd088a991344e973fdeef88ba5724bfb64504b74072cbc9c220c3a
+  checksum: 10c0/adbac5d78d755ce0f05fc91917b49344e127aaadf0515fa28dd19e3050514eeae6988ab04610fe403a6d7eb58b8dee7816c019d960373dfa22b008f842d7eaf8
   languageName: node
   linkType: hard
 
@@ -615,12 +615,12 @@ __metadata:
 
 "abundance-token@file:./.soroban/contracts/token::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "abundance-token@file:./.soroban/contracts/token#./.soroban/contracts/token::hash=b2bbf0&locator=soroban-crowdfund%40workspace%3A."
+  resolution: "abundance-token@file:./.soroban/contracts/token#./.soroban/contracts/token::hash=19fd5b&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.7.1"
     "@stellar/stellar-sdk": "npm:11.2.0"
     buffer: "npm:6.0.3"
-  checksum: 10c0/5cba7dce3fd96c5fc56f6c8c8fd6f6310be992bb332e2164ab70633606ae899954903b54c1bcbc3e393f73cdb2632f8f2dca6820320c1d357ded06eae42853ec
+  checksum: 10c0/89474ac9ffbd8c6507c86d7aefdcb88e4aaf0f39a3aa017b507ab20a997786538bcfc9df6b6a3648b20c4b3056ab2e66d4111c702bd594565c5bd3ca8a8c3cd6
   languageName: node
   linkType: hard
 
@@ -687,7 +687,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.6.0, axios@npm:^1.6.7":
+"axios@npm:^1.6.0, axios@npm:^1.6.5, axios@npm:^1.6.7":
   version: 1.6.7
   resolution: "axios@npm:1.6.7"
   dependencies:
@@ -695,17 +695,6 @@ __metadata:
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
   checksum: 10c0/131bf8e62eee48ca4bd84e6101f211961bf6a21a33b95e5dfb3983d5a2fe50d9fffde0b57668d7ce6f65063d3dc10f2212cbcb554f75cfca99da1c73b210358d
-  languageName: node
-  linkType: hard
-
-"axios@npm:^1.6.5":
-  version: 1.6.5
-  resolution: "axios@npm:1.6.5"
-  dependencies:
-    follow-redirects: "npm:^1.15.4"
-    form-data: "npm:^4.0.0"
-    proxy-from-env: "npm:^1.1.0"
-  checksum: 10c0/aeb9acf87590d8aa67946072ced38e01ca71f5dfe043782c0ccea667e5dd5c45830c08afac9be3d7c894f09684b8ab2a458f497d197b73621233bcf202d9d468
   languageName: node
   linkType: hard
 
@@ -786,9 +775,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001579":
-  version: 1.0.30001579
-  resolution: "caniuse-lite@npm:1.0.30001579"
-  checksum: 10c0/4003970f8d01a5fa314e39f4a21751dc750a530f3d19aed225e18e8e02892b590b8b0debfa0961eae9bc0e49b77bfb17cf30d2469540e428a8305e3cc9164fb8
+  version: 1.0.30001589
+  resolution: "caniuse-lite@npm:1.0.30001589"
+  checksum: 10c0/20debfb949413f603011bc7dacaf050010778bc4f8632c86fafd1bd0c43180c95ae7c31f6c82348f6309e5e221934e327c3607a216e3f09640284acf78cd6d4d
   languageName: node
   linkType: hard
 
@@ -878,12 +867,12 @@ __metadata:
 
 "crowdfund-contract@file:./.soroban/contracts/crowdfund::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "crowdfund-contract@file:./.soroban/contracts/crowdfund#./.soroban/contracts/crowdfund::hash=9692d4&locator=soroban-crowdfund%40workspace%3A."
+  resolution: "crowdfund-contract@file:./.soroban/contracts/crowdfund#./.soroban/contracts/crowdfund::hash=50071f&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.7.1"
     "@stellar/stellar-sdk": "npm:11.2.0"
     buffer: "npm:6.0.3"
-  checksum: 10c0/ac959e8b37cee17eb7d8f201f1aeedf87ab5b8d36adbf93da4cd058e35c1ff6019a038be9308b307831fe1bea025ee81e646f19889758bdbb62c37011af916d2
+  checksum: 10c0/816a76c958f60ab3b6d5e4fef05e6edc46ad59f7b862b7e6d1a05f9d85ff01b859a2617cbab46986ce451c13ed13bac1b5fdc109ae3df067dfbee38aef282935
   languageName: node
   linkType: hard
 
@@ -1108,22 +1097,22 @@ __metadata:
   linkType: hard
 
 "http-proxy-agent@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "http-proxy-agent@npm:7.0.0"
+  version: 7.0.2
+  resolution: "http-proxy-agent@npm:7.0.2"
   dependencies:
     agent-base: "npm:^7.1.0"
     debug: "npm:^4.3.4"
-  checksum: 10c0/a11574ff39436cee3c7bc67f259444097b09474605846ddd8edf0bf4ad8644be8533db1aa463426e376865047d05dc22755e638632819317c0c2f1b2196657c8
+  checksum: 10c0/4207b06a4580fb85dd6dff521f0abf6db517489e70863dca1a0291daa7f2d3d2d6015a57bd702af068ea5cf9f1f6ff72314f5f5b4228d299c0904135d2aef921
   languageName: node
   linkType: hard
 
 "https-proxy-agent@npm:^7.0.1":
-  version: 7.0.2
-  resolution: "https-proxy-agent@npm:7.0.2"
+  version: 7.0.4
+  resolution: "https-proxy-agent@npm:7.0.4"
   dependencies:
     agent-base: "npm:^7.0.2"
     debug: "npm:4"
-  checksum: 10c0/7735eb90073db087e7e79312e3d97c8c04baf7ea7ca7b013382b6a45abbaa61b281041a98f4e13c8c80d88f843785bcc84ba189165b4b4087b1e3496ba656d77
+  checksum: 10c0/bc4f7c38da32a5fc622450b6cb49a24ff596f9bd48dcedb52d2da3fa1c1a80e100fb506bd59b326c012f21c863c69b275c23de1a01d0b84db396822fdf25e52b
   languageName: node
   linkType: hard
 
@@ -1171,10 +1160,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ip@npm:^2.0.0":
-  version: 2.0.1
-  resolution: "ip@npm:2.0.1"
-  checksum: 10c0/cab8eb3e88d0abe23e4724829621ec4c4c5cb41a7f936a2e626c947128c1be16ed543448d42af7cca95379f9892bfcacc1ccd8d09bc7e8bea0e86d492ce33616
+"ip-address@npm:^9.0.5":
+  version: 9.0.5
+  resolution: "ip-address@npm:9.0.5"
+  dependencies:
+    jsbn: "npm:1.1.0"
+    sprintf-js: "npm:^1.1.3"
+  checksum: 10c0/331cd07fafcb3b24100613e4b53e1a2b4feab11e671e655d46dc09ee233da5011284d09ca40c4ecbdfe1d0004f462958675c224a804259f2f78d2465a87824bc
   languageName: node
   linkType: hard
 
@@ -1240,6 +1232,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsbn@npm:1.1.0":
+  version: 1.1.0
+  resolution: "jsbn@npm:1.1.0"
+  checksum: 10c0/4f907fb78d7b712e11dea8c165fe0921f81a657d3443dde75359ed52eb2b5d33ce6773d97985a089f09a65edd80b11cb75c767b57ba47391fee4c969f7215c96
+  languageName: node
+  linkType: hard
+
 "loose-envify@npm:^1.1.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
@@ -1252,9 +1251,9 @@ __metadata:
   linkType: hard
 
 "lru-cache@npm:^10.0.1, lru-cache@npm:^9.1.1 || ^10.0.0":
-  version: 10.1.0
-  resolution: "lru-cache@npm:10.1.0"
-  checksum: 10c0/778bc8b2626daccd75f24c4b4d10632496e21ba064b126f526c626fbdbc5b28c472013fccd45d7646b9e1ef052444824854aed617b59cd570d01a8b7d651fc1e
+  version: 10.2.0
+  resolution: "lru-cache@npm:10.2.0"
+  checksum: 10c0/c9847612aa2daaef102d30542a8d6d9b2c2bb36581c1bf0dc3ebf5e5f3352c772a749e604afae2e46873b930a9e9523743faac4e5b937c576ab29196774712ee
   languageName: node
   linkType: hard
 
@@ -1763,13 +1762,13 @@ __metadata:
   linkType: hard
 
 "semver@npm:^7.3.5, semver@npm:^7.5.4":
-  version: 7.5.4
-  resolution: "semver@npm:7.5.4"
+  version: 7.6.0
+  resolution: "semver@npm:7.6.0"
   dependencies:
     lru-cache: "npm:^6.0.0"
   bin:
     semver: bin/semver.js
-  checksum: 10c0/5160b06975a38b11c1ab55950cb5b8a23db78df88275d3d8a42ccf1f29e55112ac995b3a26a522c36e3b5f76b0445f1eef70d696b8c7862a2b4303d7b0e7609e
+  checksum: 10c0/fbfe717094ace0aa8d6332d7ef5ce727259815bd8d8815700853f4faf23aacbd7192522f0dc5af6df52ef4fa85a355ebd2f5d39f554bd028200d6cf481ab9b53
   languageName: node
   linkType: hard
 
@@ -1905,22 +1904,22 @@ __metadata:
   linkType: hard
 
 "socks@npm:^2.7.1":
-  version: 2.7.1
-  resolution: "socks@npm:2.7.1"
+  version: 2.8.0
+  resolution: "socks@npm:2.8.0"
   dependencies:
-    ip: "npm:^2.0.0"
+    ip-address: "npm:^9.0.5"
     smart-buffer: "npm:^4.2.0"
-  checksum: 10c0/43f69dbc9f34fc8220bc51c6eea1c39715ab3cfdb115d6e3285f6c7d1a603c5c75655668a5bbc11e3c7e2c99d60321fb8d7ab6f38cda6a215fadd0d6d0b52130
+  checksum: 10c0/208fa5d5ae47857653c4fc039d47e4c1e76313b24052151a949aa98f027f9aaba8fc6c5dc0f7f2d9ceeb94e9940217581f2d9798436563c1494b67a6cb68611f
   languageName: node
   linkType: hard
 
-"sodium-native@npm:^4.0.1, sodium-native@npm:^4.0.5":
-  version: 4.0.5
-  resolution: "sodium-native@npm:4.0.5"
+"sodium-native@npm:^4.0.1, sodium-native@npm:^4.0.8":
+  version: 4.0.10
+  resolution: "sodium-native@npm:4.0.10"
   dependencies:
     node-gyp: "npm:latest"
     node-gyp-build: "npm:^4.6.0"
-  checksum: 10c0/d2317355d350e483713a95ad3234215e3a665df8f90d8a602b849b4a05bc14cfe58a61393453db288543be704ad73b05531859672281a935c3dcac55788b4f28
+  checksum: 10c0/95fcc84a3b4589833a41ac9e6abebb719978bbdc50945cf4e78df87d0273f021e1f4079d9b788dca563b34ceb9d83d0d2aab12448da66af9c489fe30bcadc0c1
   languageName: node
   linkType: hard
 
@@ -1942,10 +1941,10 @@ __metadata:
     "@soroban-react/core": "npm:^9.0.0"
     "@soroban-react/freighter": "npm:^9.0.0"
     "@soroban-react/types": "npm:^9.0.0"
-    "@stellar/stellar-sdk": "npm:^11.2.1"
+    "@stellar/stellar-sdk": "npm:^11.2.2"
     "@types/humanize-duration": "npm:^3.27.4"
-    "@types/node": "npm:^20.11.13"
-    "@types/react": "npm:^18.2.48"
+    "@types/node": "npm:^20.11.20"
+    "@types/react": "npm:^18.2.59"
     abundance-token: "file:./.soroban/contracts/token"
     axios: "npm:^1.6.7"
     crowdfund-contract: "file:./.soroban/contracts/crowdfund"
@@ -1972,6 +1971,13 @@ __metadata:
   version: 4.2.0
   resolution: "split2@npm:4.2.0"
   checksum: 10c0/b292beb8ce9215f8c642bb68be6249c5a4c7f332fc8ecadae7be5cbdf1ea95addc95f0459ef2e7ad9d45fd1064698a097e4eb211c83e772b49bc0ee423e91534
+  languageName: node
+  linkType: hard
+
+"sprintf-js@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "sprintf-js@npm:1.1.3"
+  checksum: 10c0/09270dc4f30d479e666aee820eacd9e464215cdff53848b443964202bf4051490538e5dd1b42e1a65cf7296916ca17640aebf63dae9812749c7542ee5f288dec
   languageName: node
   linkType: hard
 

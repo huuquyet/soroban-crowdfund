@@ -59,7 +59,7 @@ const Pledge: FunctionComponent = () => {
       () => (event) => {
         const eventTokenBalance = event.value
         setAbundance({
-          ...abundance,
+          ...abundance!,
           balance: scValToNative(eventTokenBalance),
         })
       },

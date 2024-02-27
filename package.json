@@ -20,7 +20,7 @@
     "@soroban-react/core": "^9.0.0",
     "@soroban-react/freighter": "^9.0.0",
     "@soroban-react/types": "^9.0.0",
-    "@stellar/stellar-sdk": "^11.2.1",
+    "@stellar/stellar-sdk": "^11.2.2",
     "abundance-token": "file:./.soroban/contracts/token",
     "axios": "^1.6.7",
     "crowdfund-contract": "file:./.soroban/contracts/crowdfund",
@@ -34,8 +34,8 @@
   "devDependencies": {
     "@biomejs/biome": "^1.5.3",
     "@types/humanize-duration": "^3.27.4",
-    "@types/node": "^20.11.13",
-    "@types/react": "^18.2.48",
+    "@types/node": "^20.11.20",
+    "@types/react": "^18.2.59",
     "pino-pretty": "^10.3.1",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3"
