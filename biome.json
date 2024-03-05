@@ -6,23 +6,26 @@
   "files": {
     "ignoreUnknown": true,
     "ignore": [
-      "**/node_modules",
-      "**/.git*",
-      "**/.next",
-      "**/.pnp*",
-      "**/.soroban",
-      "**/.vercel",
-      "**/dist",
-      "**/types",
-      "**/public",
-      "**/build",
-      "**/target"
+      "./node_modules",
+      "./.git*",
+      "./.next",
+      "./.pnp*",
+      "./.soroban",
+      "./.vercel",
+      "./dist",
+      "./types",
+      "./public",
+      "./build",
+      "./target"
     ]
   },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "correctness": {
+        "useExhaustiveDependencies": "off"
+      }
     }
   },
   "formatter": {
