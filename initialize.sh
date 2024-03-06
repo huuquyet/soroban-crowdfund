@@ -23,12 +23,7 @@ else
 fi
 
 if [[ "$SOROBAN_RPC_HOST" == "" ]]; then
-  # If soroban-cli is called inside the soroban-preview docker container,
-  # it can call the stellar standalone container just using its name "stellar"
-  if [[ "$IS_USING_DOCKER" == "true" ]]; then
-    SOROBAN_RPC_HOST="http://stellar:8000"
-    SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"
-  elif [[ "$NETWORK" == "futurenet" ]]; then
+  if [[ "$NETWORK" == "futurenet" ]]; then
     SOROBAN_RPC_HOST="https://rpc-futurenet.stellar.org"
     SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"
   elif [[ "$NETWORK" == "testnet" ]]; then
@@ -44,17 +39,17 @@ else
 fi
 
 case "$1" in
-standalone)
-  SOROBAN_NETWORK_PASSPHRASE="Standalone Network ; February 2017"
-  FRIENDBOT_URL="$SOROBAN_RPC_HOST/friendbot"
-  ;;
 futurenet)
+  echo "Using Futurenet network with RPC URL: $SOROBAN_RPC_URL"
   SOROBAN_NETWORK_PASSPHRASE="Test SDF Future Network ; October 2022"
-  FRIENDBOT_URL="https://friendbot-futurenet.stellar.org/"
   ;;
 testnet)
+  echo "Using Testnet network with RPC URL: $SOROBAN_RPC_URL"
   SOROBAN_NETWORK_PASSPHRASE="Test SDF Network ; September 2015"
-  FRIENDBOT_URL="https://friendbot.stellar.org"
+  ;;
+standalone)
+  echo "Using standalone network with RPC URL: $SOROBAN_RPC_URL"
+  SOROBAN_NETWORK_PASSPHRASE="Standalone Network ; February 2017"
   ;;
 *)
   echo "Usage: $0 standalone|futurenet|testnet [rpc-host]"
@@ -64,26 +59,23 @@ esac
 
 echo "Using $NETWORK network"
 echo "  RPC URL: $SOROBAN_RPC_URL"
-echo "  Friendbot URL: $FRIENDBOT_URL"
 
 echo "Add the $NETWORK network to cli client"
 soroban config network add \
   --rpc-url "$SOROBAN_RPC_URL" \
   --network-passphrase "$SOROBAN_NETWORK_PASSPHRASE" "$NETWORK"
 
-echo "Add $NETWORK to .soroban to shared config"
+echo "Add $NETWORK network to shared config"
 echo "{ \"network\": \"$NETWORK\", \"rpcUrl\": \"$SOROBAN_RPC_URL\", \"networkPassphrase\": \"$SOROBAN_NETWORK_PASSPHRASE\" }" > ./src/shared/config.json
 
 if !(soroban config identity ls | grep token-admin 2>&1 >/dev/null); then
-  echo Create the token-admin identity
+  echo "Create the token-admin identity"
   soroban config identity generate token-admin --network $NETWORK
 fi
-ABUNDANCE_ADMIN_ADDRESS="$(soroban config identity address token-admin)"
 
 # This will fail if the account already exists, but it'll still be fine.
 echo "Fund token-admin account from friendbot"
   soroban config identity fund token-admin --network $NETWORK
-# curl --silent -X POST "$FRIENDBOT_URL?addr=$ABUNDANCE_ADMIN_ADDRESS" >/dev/null
 
 ARGS="--network $NETWORK --source token-admin"
 
@@ -135,7 +127,17 @@ soroban contract invoke \
   --token "$ABUNDANCE_ID"
 
 echo "Generate bindings contracts"
-soroban contract bindings typescript --network $NETWORK --id $ABUNDANCE_ID --wasm $TOKEN_PATH".optimized.wasm" --output-dir ./.soroban/contracts/token --overwrite || true
-soroban contract bindings typescript --network $NETWORK --id $CROWDFUND_ID --wasm $CROWDFUND_PATH".optimized.wasm" --output-dir ./.soroban/contracts/crowdfund --overwrite || true
+soroban contract bindings typescript \
+  --network $NETWORK \
+  --id $ABUNDANCE_ID \
+  --wasm $TOKEN_PATH".optimized.wasm" \
+  --output-dir ./.soroban/contracts/token \
+  --overwrite || true
+soroban contract bindings typescript \
+  --network $NETWORK \
+  --id $CROWDFUND_ID \
+  --wasm $CROWDFUND_PATH".optimized.wasm" \
+  --output-dir ./.soroban/contracts/crowdfund \
+  --overwrite || true
 
 echo "Done"
