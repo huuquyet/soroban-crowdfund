@@ -617,12 +617,12 @@ __metadata:
 
 "abundance-token@file:./.soroban/contracts/token::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "abundance-token@file:./.soroban/contracts/token#./.soroban/contracts/token::hash=06736d&locator=soroban-crowdfund%40workspace%3A."
+  resolution: "abundance-token@file:./.soroban/contracts/token#./.soroban/contracts/token::hash=e133b1&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.7.1"
     "@stellar/stellar-sdk": "npm:11.2.0"
     buffer: "npm:6.0.3"
-  checksum: 10c0/826d332295f86a83209f304c8aa77baed16f5133484687f9c33d0b8c76795e0dfa481f8a4e6b0b3d99f12243b0ce87417c2206524b79187929cf7938c422d907
+  checksum: 10c0/ee57a82fce4a899311269c24451051fa71e2ab3ff150036d5be6b82ec3c693ef3ec9ded279bbca4938a6288971b6f31d776b260e76dd75559a7c9180ab5a48e3
   languageName: node
   linkType: hard
 
@@ -869,12 +869,12 @@ __metadata:
 
 "crowdfund-contract@file:./.soroban/contracts/crowdfund::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "crowdfund-contract@file:./.soroban/contracts/crowdfund#./.soroban/contracts/crowdfund::hash=664de9&locator=soroban-crowdfund%40workspace%3A."
+  resolution: "crowdfund-contract@file:./.soroban/contracts/crowdfund#./.soroban/contracts/crowdfund::hash=a236c3&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.7.1"
     "@stellar/stellar-sdk": "npm:11.2.0"
     buffer: "npm:6.0.3"
-  checksum: 10c0/157e8b4c586aa3bcc29b959b0539fed02d2b9bbc63db7bc019918d96de7a0772b3ca9ac90518c8556d4d4943bbba9a58ce1618d21517bc798827253eda879fe3
+  checksum: 10c0/6aff161d905b7ab6bef38c3464bf8fd9662fddf01b03a78e9d7db2926415f6a329fff6e02893e665fc59e758a30109d35da65395438ed94f593a66075a89a896
   languageName: node
   linkType: hard
 

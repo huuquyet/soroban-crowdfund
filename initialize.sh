@@ -2,43 +2,36 @@
 
 set -e
 
-NETWORK="$1"
+NETWORK=$1
 
-SOROBAN_RPC_HOST="$2"
+SOROBAN_RPC_HOST=$2
 
-PATH=./target/bin:$PATH
-
-if [[ -f "./.soroban/contracts/crowdfund_id" ]]; then
+if [[ -d "./.soroban/contracts" ]]; then
   echo "Found existing '.soroban/contracts' directory; already initialized."
   exit 0
 fi
 
-if [[ -f "./target/bin/soroban" ]]; then
+if [[ -d "./target/bin" ]]; then
   echo "Using soroban binary from ./target/bin"
 elif command -v soroban &> /dev/null; then
   echo "Using soroban cli"
 else
   echo "Building pinned soroban binary"
-  cargo install_soroban
+  cargo install --locked soroban-cli --debug --features opt
 fi
 
-if [[ "$SOROBAN_RPC_HOST" == "" ]]; then
-  if [[ "$NETWORK" == "futurenet" ]]; then
-    SOROBAN_RPC_HOST="https://rpc-futurenet.stellar.org"
-    SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"
-  elif [[ "$NETWORK" == "testnet" ]]; then
-    SOROBAN_RPC_HOST="https://soroban-testnet.stellar.org"
-    SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"
-  else
-     # assumes standalone on quickstart, which has the soroban/rpc path
-    SOROBAN_RPC_HOST="http://localhost:8000"
-    SOROBAN_RPC_URL="$SOROBAN_RPC_HOST/soroban/rpc"
-  fi
-else 
-  SOROBAN_RPC_URL="$SOROBAN_RPC_HOST"  
+if [[ $SOROBAN_RPC_HOST != "" ]]; then
+  SOROBAN_RPC_URL=$SOROBAN_RPC_HOST
+elif [[ $NETWORK == "futurenet" ]]; then
+  SOROBAN_RPC_URL="https://rpc-futurenet.stellar.org"
+elif [[ $NETWORK == "testnet" ]]; then
+  SOROBAN_RPC_URL="https://soroban-testnet.stellar.org"
+else
+  # assumes standalone on quickstart, which has the soroban/rpc path
+  SOROBAN_RPC_URL="http://localhost:8000/soroban/rpc"
 fi
 
-case "$1" in
+case $NETWORK in
 futurenet)
   echo "Using Futurenet network with RPC URL: $SOROBAN_RPC_URL"
   SOROBAN_NETWORK_PASSPHRASE="Test SDF Future Network ; October 2022"
@@ -57,13 +50,10 @@ standalone)
   ;;
 esac
 
-echo "Using $NETWORK network"
-echo "  RPC URL: $SOROBAN_RPC_URL"
-
 echo "Add the $NETWORK network to cli client"
 soroban config network add \
-  --rpc-url "$SOROBAN_RPC_URL" \
-  --network-passphrase "$SOROBAN_NETWORK_PASSPHRASE" "$NETWORK"
+  --rpc-url $SOROBAN_RPC_URL \
+  --network-passphrase "$SOROBAN_NETWORK_PASSPHRASE" $NETWORK
 
 echo "Add $NETWORK network to shared config"
 echo "{ \"network\": \"$NETWORK\", \"rpcUrl\": \"$SOROBAN_RPC_URL\", \"networkPassphrase\": \"$SOROBAN_NETWORK_PASSPHRASE\" }" > ./src/shared/config.json
@@ -106,7 +96,7 @@ echo "Contract deployed succesfully with ID: $CROWDFUND_ID"
 echo "Initialize the abundance token contract"
 soroban contract invoke \
   $ARGS \
-  --id "$ABUNDANCE_ID" \
+  --id $ABUNDANCE_ID \
   -- \
   initialize \
   --symbol ABND \
@@ -118,13 +108,13 @@ echo "Initialize the crowdfund contract"
 deadline="$(($(date +"%s") + 86400))"
 soroban contract invoke \
   $ARGS \
-  --id "$CROWDFUND_ID" \
+  --id $CROWDFUND_ID \
   -- \
   initialize \
-  --recipient "$ABUNDANCE_ADMIN_ADDRESS" \
-  --deadline "$deadline" \
+  --recipient token-admin \
+  --deadline $deadline \
   --target_amount "3000000000" \
-  --token "$ABUNDANCE_ID"
+  --token $ABUNDANCE_ID
 
 echo "Generate bindings contracts"
 soroban contract bindings typescript \
