@@ -617,12 +617,12 @@ __metadata:
 
 "abundance-token@file:./.soroban/contracts/token::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "abundance-token@file:./.soroban/contracts/token#./.soroban/contracts/token::hash=e133b1&locator=soroban-crowdfund%40workspace%3A."
+  resolution: "abundance-token@file:./.soroban/contracts/token#./.soroban/contracts/token::hash=b2bbf0&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.7.1"
     "@stellar/stellar-sdk": "npm:11.2.0"
     buffer: "npm:6.0.3"
-  checksum: 10c0/ee57a82fce4a899311269c24451051fa71e2ab3ff150036d5be6b82ec3c693ef3ec9ded279bbca4938a6288971b6f31d776b260e76dd75559a7c9180ab5a48e3
+  checksum: 10c0/5cba7dce3fd96c5fc56f6c8c8fd6f6310be992bb332e2164ab70633606ae899954903b54c1bcbc3e393f73cdb2632f8f2dca6820320c1d357ded06eae42853ec
   languageName: node
   linkType: hard
 
@@ -869,12 +869,12 @@ __metadata:
 
 "crowdfund-contract@file:./.soroban/contracts/crowdfund::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "crowdfund-contract@file:./.soroban/contracts/crowdfund#./.soroban/contracts/crowdfund::hash=a236c3&locator=soroban-crowdfund%40workspace%3A."
+  resolution: "crowdfund-contract@file:./.soroban/contracts/crowdfund#./.soroban/contracts/crowdfund::hash=9692d4&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:1.7.1"
     "@stellar/stellar-sdk": "npm:11.2.0"
     buffer: "npm:6.0.3"
-  checksum: 10c0/6aff161d905b7ab6bef38c3464bf8fd9662fddf01b03a78e9d7db2926415f6a329fff6e02893e665fc59e758a30109d35da65395438ed94f593a66075a89a896
+  checksum: 10c0/ac959e8b37cee17eb7d8f201f1aeedf87ab5b8d36adbf93da4cd058e35c1ff6019a038be9308b307831fe1bea025ee81e646f19889758bdbb62c37011af916d2
   languageName: node
   linkType: hard
 
@@ -1014,12 +1014,12 @@ __metadata:
   linkType: hard
 
 "follow-redirects@npm:^1.15.4":
-  version: 1.15.5
-  resolution: "follow-redirects@npm:1.15.5"
+  version: 1.15.6
+  resolution: "follow-redirects@npm:1.15.6"
   peerDependenciesMeta:
     debug:
       optional: true
-  checksum: 10c0/418d71688ceaf109dfd6f85f747a0c75de30afe43a294caa211def77f02ef19865b547dfb73fde82b751e1cc507c06c754120b848fe5a7400b0a669766df7615
+  checksum: 10c0/9ff767f0d7be6aa6870c82ac79cf0368cd73e01bbc00e9eb1c2a16fbb198ec105e3c9b6628bb98e9f3ac66fe29a957b9645bcb9a490bb7aa0d35f908b6b85071
   languageName: node
   linkType: hard
 
