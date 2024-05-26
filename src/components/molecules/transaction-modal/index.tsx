@@ -7,7 +7,7 @@ import {
   LinkedinSvg,
   TwitterSvg,
 } from '../../../assets/icons'
-import { IResultSubmit } from '../form-pledge'
+import type { IResultSubmit } from '../form-pledge'
 import styles from './style.module.css'
 
 export interface TransactionModalProps {

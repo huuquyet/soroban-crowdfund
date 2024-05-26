@@ -1,6 +1,6 @@
 import { useSorobanReact } from '@soroban-react/core'
 import { scValToNative, xdr } from '@stellar/stellar-sdk'
-import { FunctionComponent, useEffect, useMemo, useState } from 'react'
+import { type FunctionComponent, useEffect, useMemo, useState } from 'react'
 import { useSubscription } from '../../../hooks'
 import {
   abundance as abundanceContract,

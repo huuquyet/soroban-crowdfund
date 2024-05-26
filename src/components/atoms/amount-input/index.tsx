@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react'
+import type { Dispatch, SetStateAction } from 'react'
 import styles from './style.module.css'
 
 export interface InputProps {
@@ -12,7 +12,7 @@ export function AmountInput({ placeHolder, setAmount, input, setInput }: InputPr
   const handleChange = (event: {
     target: { name: string; value: string }
   }): void => {
-    setAmount(parseInt(event.target.value))
+    setAmount(Number.parseInt(event.target.value))
     setInput(event.target.value)
   }
 

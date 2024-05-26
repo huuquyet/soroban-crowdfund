@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('node:fs')
 const axios = require('axios')
 
 //TODO: Hide the link to the environment variables after testing phase (local and repository)

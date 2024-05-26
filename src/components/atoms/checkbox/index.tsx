@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react'
+import type { Dispatch, SetStateAction } from 'react'
 import styles from './style.module.css'
 
 export interface CheckboxProps {
@@ -14,7 +14,7 @@ export function Checkbox({ title, value, isChecked, setAmount, clearInput }: Che
     target: { checked: boolean; value: string }
   }) => {
     clearInput()
-    setAmount(parseInt(event.target.value))
+    setAmount(Number.parseInt(event.target.value))
   }
 
   return (

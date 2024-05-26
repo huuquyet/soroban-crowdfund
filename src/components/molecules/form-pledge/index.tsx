@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useState } from 'react'
+import { type FunctionComponent, useEffect, useState } from 'react'
 import { abundance, crowdfund } from '../../../shared/contracts'
 import { Utils } from '../../../shared/utils'
 import { AmountInput, Button, Checkbox } from '../../atoms'

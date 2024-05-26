@@ -1,4 +1,4 @@
-import { SorobanContextType } from '@soroban-react/core'
+import type { SorobanContextType } from '@soroban-react/core'
 import styles from './style.module.css'
 
 export interface ConnectButtonProps {

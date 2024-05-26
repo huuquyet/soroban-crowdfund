@@ -1,5 +1,5 @@
 import { SorobanReactProvider } from '@soroban-react/core'
-import React from 'react'
+import type React from 'react'
 import { allowedChains } from './allowedChains'
 import { allowedConnectors } from './connectors'
 
