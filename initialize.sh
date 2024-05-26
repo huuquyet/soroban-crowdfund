@@ -11,12 +11,10 @@ if [[ -d "./.soroban/contracts" ]]; then
   exit 0
 fi
 
-if [[ -d "./target/bin" ]]; then
-  echo "Using soroban binary from ./target/bin"
-elif command -v soroban &> /dev/null; then
+if type soroban > /dev/null; then
   echo "Using soroban cli"
 else
-  echo "Building pinned soroban binary"
+  echo "Soroban cli not found; installing soroban cli"
   cargo install --locked soroban-cli --debug --features opt
 fi
 
