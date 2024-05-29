@@ -14,12 +14,12 @@ tasks:
       --enable-soroban-rpc
   # This "CLI - Futurenet" task opens a terminal for you to interact with the
   # futurenet network.
-  - name: CLI - Futurenet
+  - name: CLI - Testnet
     # We specify some required environment variables for use on the futurenet.
     env:
       # This can be set by the user, but this terminal is dedicated to futurenet so set for convenience.
-      SOROBAN_RPC_URL: "https://rpc-futurenet.stellar.org/"
-      SOROBAN_NETWORK_PASSPHRASE: "Test SDF Future Network ; October 2022"
+      SOROBAN_RPC_URL: "https://soroban-testnet.stellar.org/"
+      SOROBAN_NETWORK_PASSPHRASE: "Test SDF Network ; September 2015"
     # To keep things tidy, we clear the terminal from the previous output.
     command: |
       clear

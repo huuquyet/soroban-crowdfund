@@ -29,12 +29,12 @@ jobs:
         node-version: 18.14.2
         cache: 'npm'
     - run: |
-        mkdir -p .soroban-example-dapp
-        echo 'futurenet' > .soroban-example-dapp/network
-        echo 'CAU23MVDEW7VMB3AXC5PL5GZO3HBYZPEIP2P46X4T3AIC4Y7FXYZWES5' > .soroban-example-dapp/abundance_token_id
-        echo 'CDJPYH5HNGZ24SEWXFJOW6RXXHHNKU4XPCPBMB2VRTDPTMVPLYFQKZIE' > .soroban-example-dapp/crowdfund_id
-        echo 'Test SDF Future Network ; October 2022' > .soroban-example-dapp/passphrase
-        echo 'https://rpc-futurenet.stellar.org/' > .soroban-example-dapp/rpc-url
+        mkdir -p .soroban
+        echo 'futurenet' > .soroban/network
+        echo 'CCY3P2KYW3A6SEMH7QHDA6U7LQUMRJP57IFDAQPLJL3KO2GF2YTH444B' > .soroban/abundance_token_id
+        echo 'CDRCSILOO5XENYXCE7FYCLJZ5U2QU4AARLJSIMEISS4WVHLXVWKQ6EC2' > .soroban/crowdfund_id
+        echo 'Test SDF Network ; September 2015' > .soroban/passphrase
+        echo 'https://rpc-futurenet.stellar.org/' > .soroban/rpc-url
         echo '{"network":"futurenet","rpcUrl":"https://rpc-futurenet.stellar.org","networkPassphrase":"Test SDF Future Network ; October 2022"}' > shared/config.json
     - run: npm ci
     - run: npm run build

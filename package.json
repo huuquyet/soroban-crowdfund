@@ -1,7 +1,7 @@
 {
   "name": "soroban-crowdfund",
+  "description": "Clone of https://github.com/stellar/soroban-dapps-challenge/tree/crowdfund",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "scripts": {
     "build": "next build",
@@ -10,7 +10,7 @@
     "doctor": "yarn dlx @yarnpkg/doctor",
     "lint": "yarn dlx @biomejs/biome check --apply .",
     "reset": "yarn clean && npm run setup",
-    "setup": "./initialize.sh ${NETWORK:-futurenet} && yarn install",
+    "setup": "./initialize.sh ${NETWORK:-testnet} && yarn install",
     "start": "next start",
     "update": "yarn upgrade-interactive",
     "vscode": "yarn dlx @yarnpkg/sdks vscode"
@@ -35,6 +35,7 @@
     "@types/humanize-duration": "^3.27.4",
     "@types/node": "^20.12.12",
     "@types/react": "^18.3.3",
+    "@vercel/analytics": "^1.3.1",
     "pino-pretty": "^10.3.1",
     "tslib": "^2.6.2",
     "typescript": "^5.4.5"

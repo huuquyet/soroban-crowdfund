@@ -5,12 +5,12 @@ import config from './config.json'
 
 const { network, rpcUrl } = config
 
-export const abundance = new Abundance.Contract({
+export const abundance = new Abundance.Client({
   rpcUrl,
   ...Abundance.networks[network as keyof typeof Abundance.networks],
 })
 
-export const crowdfund = new Crowdfund.Contract({
+export const crowdfund = new Crowdfund.Client({
   rpcUrl,
   ...Crowdfund.networks[network as keyof typeof Crowdfund.networks],
 })

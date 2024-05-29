@@ -3,9 +3,9 @@ FROM gitpod/workspace-full:2024-02-16-14-23-15
 
 RUN mkdir -p ~/.local/bin
 
-RUN curl -L https://github.com/stellar/stellar-cli/releases/download/v20.3.4/soroban-cli-20.3.4-x86_64-unknown-linux-gnu.tar.gz | tar xz -C ~/.local/bin soroban
+RUN curl -L https://github.com/stellar/stellar-cli/releases/download/v21.0.0-rc.1/soroban-cli-21.0.0-rc.1-x86_64-unknown-linux-gnu.tar.gz | tar xz -C ~/.local/bin soroban
 RUN chmod +x ~/.local/bin/soroban
-RUN echo "source <(soroban completion --shell bash)" >> ~/.bashrc
+RUN echo "source <(soroban completion --shell bash)" >>~/.bashrc
 
 RUN curl -L https://github.com/mozilla/sccache/releases/download/v0.8.1/sccache-v0.8.1-x86_64-unknown-linux-musl.tar.gz | tar xz --strip-components 1 -C ~/.local/bin sccache-v0.8.1-x86_64-unknown-linux-musl/sccache
 RUN chmod +x ~/.local/bin/sccache

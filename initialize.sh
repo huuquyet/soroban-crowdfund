@@ -11,11 +11,11 @@ if [[ -d "./.soroban/contracts" ]]; then
   exit 0
 fi
 
-if type soroban > /dev/null; then
+if type soroban >/dev/null; then
   echo "Using soroban cli"
 else
   echo "Soroban cli not found; installing soroban cli"
-  cargo install --locked soroban-cli --debug --features opt
+  cargo install --locked soroban-cli --debug --features opt --version 21.0.0-rc.1
 fi
 
 if [[ $SOROBAN_RPC_HOST != "" ]]; then
@@ -49,21 +49,21 @@ standalone)
 esac
 
 echo "Add the $NETWORK network to cli client"
-soroban network add \
+soroban network add --global \
   --rpc-url $SOROBAN_RPC_URL \
   --network-passphrase "$SOROBAN_NETWORK_PASSPHRASE" $NETWORK
 
 echo "Add $NETWORK network to shared config"
-echo "{ \"network\": \"$NETWORK\", \"rpcUrl\": \"$SOROBAN_RPC_URL\", \"networkPassphrase\": \"$SOROBAN_NETWORK_PASSPHRASE\" }" > ./src/shared/config.json
+echo "{ \"network\": \"$NETWORK\", \"rpcUrl\": \"$SOROBAN_RPC_URL\", \"networkPassphrase\": \"$SOROBAN_NETWORK_PASSPHRASE\" }" >./src/shared/config.json
 
 if !(soroban keys ls | grep token-admin 2>&1 >/dev/null); then
   echo "Create the token-admin identity"
-  soroban keys generate token-admin --network $NETWORK
+  soroban keys generate --global token-admin --network $NETWORK
 fi
 
 # This will fail if the account already exists, but it'll still be fine.
 echo "Fund token-admin account from friendbot"
-  soroban keys fund token-admin --network $NETWORK
+soroban keys fund --global token-admin --network $NETWORK
 
 ARGS="--network $NETWORK --source token-admin"
 

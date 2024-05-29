@@ -1,4 +1,4 @@
-import { futurenet, sandbox, standalone } from '@soroban-react/chains'
+import { futurenet, sandbox, testnet } from '@soroban-react/chains'
 import type { WalletChain } from '@soroban-react/types'
 
-export const allowedChains: WalletChain[] = [futurenet, sandbox, standalone]
+export const allowedChains: WalletChain[] = [testnet, futurenet, sandbox]
