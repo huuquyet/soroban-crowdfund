@@ -1,9 +1,9 @@
 name: NodeJS
 
 on:
-  push:
-    branches: [main]
-  pull_request:
+  # push:
+  #   branches: [main]
+  workflow_dispatch:
 
 jobs:
 
@@ -34,7 +34,7 @@ jobs:
         echo 'CCY3P2KYW3A6SEMH7QHDA6U7LQUMRJP57IFDAQPLJL3KO2GF2YTH444B' > .soroban/abundance_token_id
         echo 'CDRCSILOO5XENYXCE7FYCLJZ5U2QU4AARLJSIMEISS4WVHLXVWKQ6EC2' > .soroban/crowdfund_id
         echo 'Test SDF Network ; September 2015' > .soroban/passphrase
-        echo 'https://rpc-futurenet.stellar.org/' > .soroban/rpc-url
-        echo '{"network":"futurenet","rpcUrl":"https://rpc-futurenet.stellar.org","networkPassphrase":"Test SDF Future Network ; October 2022"}' > shared/config.json
+        echo 'https://soroban-testnet.stellar.org/' > .soroban/rpc-url
+        echo '{"network":"testnet","rpcUrl":"https://soroban-testnet.stellar.org","networkPassphrase":"Test SDF Network ; September 2015"}' > shared/config.json
     - run: npm ci
     - run: npm run build

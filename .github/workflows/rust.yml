@@ -1,9 +1,9 @@
 name: Rust
 
 on:
-  push:
-    branches: [main]
-  pull_request:
+  # push:
+  #   branches: [main]
+  workflow_dispatch:
 
 env:
   RUSTFLAGS: -Wclippy::all -Wclippy::pedantic
