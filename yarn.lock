@@ -221,72 +221,72 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:14.2.3":
-  version: 14.2.3
-  resolution: "@next/env@npm:14.2.3"
-  checksum: 10c0/25ab3ac2739c8e5ce35e1f50373238c5c428ab6b01d448ba78a6068dcdef88978b64f9a92790c324b2926ccc41390a67107154a0b0fee32fe980a485f4ef20d8
+"@next/env@npm:14.2.12":
+  version: 14.2.12
+  resolution: "@next/env@npm:14.2.12"
+  checksum: 10c0/fd9b3da4e530487bc12bb4e64bf910e7017763a447939f3c116b4208f111646452a9ded283ed7032d85217fa657aed71f98e9fc89409346d1fd51a59549a7a00
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:14.2.3":
-  version: 14.2.3
-  resolution: "@next/swc-darwin-arm64@npm:14.2.3"
+"@next/swc-darwin-arm64@npm:14.2.12":
+  version: 14.2.12
+  resolution: "@next/swc-darwin-arm64@npm:14.2.12"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:14.2.3":
-  version: 14.2.3
-  resolution: "@next/swc-darwin-x64@npm:14.2.3"
+"@next/swc-darwin-x64@npm:14.2.12":
+  version: 14.2.12
+  resolution: "@next/swc-darwin-x64@npm:14.2.12"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:14.2.3":
-  version: 14.2.3
-  resolution: "@next/swc-linux-arm64-gnu@npm:14.2.3"
+"@next/swc-linux-arm64-gnu@npm:14.2.12":
+  version: 14.2.12
+  resolution: "@next/swc-linux-arm64-gnu@npm:14.2.12"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:14.2.3":
-  version: 14.2.3
-  resolution: "@next/swc-linux-arm64-musl@npm:14.2.3"
+"@next/swc-linux-arm64-musl@npm:14.2.12":
+  version: 14.2.12
+  resolution: "@next/swc-linux-arm64-musl@npm:14.2.12"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:14.2.3":
-  version: 14.2.3
-  resolution: "@next/swc-linux-x64-gnu@npm:14.2.3"
+"@next/swc-linux-x64-gnu@npm:14.2.12":
+  version: 14.2.12
+  resolution: "@next/swc-linux-x64-gnu@npm:14.2.12"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:14.2.3":
-  version: 14.2.3
-  resolution: "@next/swc-linux-x64-musl@npm:14.2.3"
+"@next/swc-linux-x64-musl@npm:14.2.12":
+  version: 14.2.12
+  resolution: "@next/swc-linux-x64-musl@npm:14.2.12"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:14.2.3":
-  version: 14.2.3
-  resolution: "@next/swc-win32-arm64-msvc@npm:14.2.3"
+"@next/swc-win32-arm64-msvc@npm:14.2.12":
+  version: 14.2.12
+  resolution: "@next/swc-win32-arm64-msvc@npm:14.2.12"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-ia32-msvc@npm:14.2.3":
-  version: 14.2.3
-  resolution: "@next/swc-win32-ia32-msvc@npm:14.2.3"
+"@next/swc-win32-ia32-msvc@npm:14.2.12":
+  version: 14.2.12
+  resolution: "@next/swc-win32-ia32-msvc@npm:14.2.12"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:14.2.3":
-  version: 14.2.3
-  resolution: "@next/swc-win32-x64-msvc@npm:14.2.3"
+"@next/swc-win32-x64-msvc@npm:14.2.12":
+  version: 14.2.12
+  resolution: "@next/swc-win32-x64-msvc@npm:14.2.12"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -587,12 +587,12 @@ __metadata:
 
 "abundance-token@file:./.soroban/contracts/token::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "abundance-token@file:./.soroban/contracts/token#./.soroban/contracts/token::hash=420604&locator=soroban-crowdfund%40workspace%3A."
+  resolution: "abundance-token@file:./.soroban/contracts/token#./.soroban/contracts/token::hash=b22845&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:2.0.0"
     "@stellar/stellar-sdk": "npm:12.0.0-rc.3"
     buffer: "npm:6.0.3"
-  checksum: 10c0/8a34c36d9f09550c6af9d0eb06b887652406b259f6af16c55798a5ec9f3d1cfefef1fdf4a36fb9c5d259ba77e3adff1875c281022640302dea4003b480fce9e9
+  checksum: 10c0/9f43a0f9e3ce96a2502446442db98da070c0b806cacfa80760bad169f80c701cb93f6627ef4d982c0d5abef331df642ea0da8752b3daaee778b5a9026d92122e
   languageName: node
   linkType: hard
 
@@ -659,7 +659,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.6.0, axios@npm:^1.6.8, axios@npm:^1.7.2":
+"axios@npm:^1.6.0, axios@npm:^1.6.8":
   version: 1.7.2
   resolution: "axios@npm:1.7.2"
   dependencies:
@@ -667,6 +667,17 @@ __metadata:
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
   checksum: 10c0/cbd47ce380fe045313364e740bb03b936420b8b5558c7ea36a4563db1258c658f05e40feb5ddd41f6633fdd96d37ac2a76f884dad599c5b0224b4c451b3fa7ae
+  languageName: node
+  linkType: hard
+
+"axios@npm:^1.7.4":
+  version: 1.7.7
+  resolution: "axios@npm:1.7.7"
+  dependencies:
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10c0/4499efc89e86b0b49ffddc018798de05fab26e3bf57913818266be73279a6418c3ce8f9e934c7d2d707ab8c095e837fc6c90608fb7715b94d357720b5f568af7
   languageName: node
   linkType: hard
 
@@ -839,12 +850,12 @@ __metadata:
 
 "crowdfund-contract@file:./.soroban/contracts/crowdfund::locator=soroban-crowdfund%40workspace%3A.":
   version: 0.0.0
-  resolution: "crowdfund-contract@file:./.soroban/contracts/crowdfund#./.soroban/contracts/crowdfund::hash=0268a7&locator=soroban-crowdfund%40workspace%3A."
+  resolution: "crowdfund-contract@file:./.soroban/contracts/crowdfund#./.soroban/contracts/crowdfund::hash=6289eb&locator=soroban-crowdfund%40workspace%3A."
   dependencies:
     "@stellar/freighter-api": "npm:2.0.0"
     "@stellar/stellar-sdk": "npm:12.0.0-rc.3"
     buffer: "npm:6.0.3"
-  checksum: 10c0/c457b02a8317ff4e100890a13f93220adb5f47f3ff4db9b7843f3bf708563812a19061e6df12be3e12bd950f42d532d830db9a4bca83ba548cf585edc063dc06
+  checksum: 10c0/86a8d3230e94d9da1b688cab6c98a22e7b4fba6944e8b42395879dc14173c2fb7f32c58d4b914f9ea41e31226c79739391432071c92e18b8ecedf31f9e854f2c
   languageName: node
   linkType: hard
 
@@ -1403,20 +1414,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:^14.2.3":
-  version: 14.2.3
-  resolution: "next@npm:14.2.3"
+"next@npm:^14.2.10":
+  version: 14.2.12
+  resolution: "next@npm:14.2.12"
   dependencies:
-    "@next/env": "npm:14.2.3"
-    "@next/swc-darwin-arm64": "npm:14.2.3"
-    "@next/swc-darwin-x64": "npm:14.2.3"
-    "@next/swc-linux-arm64-gnu": "npm:14.2.3"
-    "@next/swc-linux-arm64-musl": "npm:14.2.3"
-    "@next/swc-linux-x64-gnu": "npm:14.2.3"
-    "@next/swc-linux-x64-musl": "npm:14.2.3"
-    "@next/swc-win32-arm64-msvc": "npm:14.2.3"
-    "@next/swc-win32-ia32-msvc": "npm:14.2.3"
-    "@next/swc-win32-x64-msvc": "npm:14.2.3"
+    "@next/env": "npm:14.2.12"
+    "@next/swc-darwin-arm64": "npm:14.2.12"
+    "@next/swc-darwin-x64": "npm:14.2.12"
+    "@next/swc-linux-arm64-gnu": "npm:14.2.12"
+    "@next/swc-linux-arm64-musl": "npm:14.2.12"
+    "@next/swc-linux-x64-gnu": "npm:14.2.12"
+    "@next/swc-linux-x64-musl": "npm:14.2.12"
+    "@next/swc-win32-arm64-msvc": "npm:14.2.12"
+    "@next/swc-win32-ia32-msvc": "npm:14.2.12"
+    "@next/swc-win32-x64-msvc": "npm:14.2.12"
     "@swc/helpers": "npm:0.5.5"
     busboy: "npm:1.6.0"
     caniuse-lite: "npm:^1.0.30001579"
@@ -1457,7 +1468,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: 10c0/2c409154720846d07a7a995cc3bfba24b9ee73c87360ce3266528c8a217f5f1ab6f916cffbe1be83509b4e8d7b1d713921bb5c69338b4ecaa57df3212f79a8c5
+  checksum: 10c0/3ec6bb480c2f3ab41e6ea06f5d151961a841b7c8436d3a0142a294b644668df96a0b209b810d2954ec800e8fc33e8f8c7b77a92aea6e32b02e4935135b5201ec
   languageName: node
   linkType: hard
 
@@ -1917,11 +1928,11 @@ __metadata:
     "@types/react": "npm:^18.3.3"
     "@vercel/analytics": "npm:^1.3.1"
     abundance-token: "file:./.soroban/contracts/token"
-    axios: "npm:^1.7.2"
+    axios: "npm:^1.7.4"
     crowdfund-contract: "file:./.soroban/contracts/crowdfund"
     humanize-duration: "npm:^3.32.1"
     moment: "npm:^2.30.1"
-    next: "npm:^14.2.3"
+    next: "npm:^14.2.10"
     pino-pretty: "npm:^10.3.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
